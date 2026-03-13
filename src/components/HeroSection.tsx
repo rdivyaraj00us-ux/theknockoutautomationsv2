@@ -8,7 +8,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-hero pt-24 pb-16 px-4 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-hero pt-24 pb-16 px-6 sm:px-4 overflow-hidden">
       {/* Subtle grid pattern */}
       <div className="absolute inset-0 opacity-5" style={{
         backgroundImage: "linear-gradient(hsl(var(--muted-foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--muted-foreground)) 1px, transparent 1px)",
@@ -32,7 +32,7 @@ const HeroSection = () => {
           </div>
         </div>
 
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6 tracking-tight">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6 tracking-tight">
           Stop Wasting{" "}
           <span className="text-primary">20+ Hours</span>{" "}
           Every Week on Tasks AI Can Automate
