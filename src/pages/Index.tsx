@@ -1,12 +1,24 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useScrollReveal } from "@/hooks/useScrollReveal";
+import AnnouncementBar from "@/components/AnnouncementBar";
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import StatCounter from "@/components/StatCounter";
+import ProblemSection from "@/components/ProblemSection";
+import SolutionSection from "@/components/SolutionSection";
+import PricingSection from "@/components/PricingSection";
 
 const Index = () => {
+  useScrollReveal();
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background text-foreground">
+      <AnnouncementBar />
+      <Navbar />
+      <HeroSection />
+      <StatCounter />
+      <ProblemSection />
+      <SolutionSection />
+      <PricingSection />
     </div>
   );
 };
