@@ -1,12 +1,48 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useScrollReveal } from "@/hooks/useScrollReveal";
+import AnnouncementBar from "@/components/AnnouncementBar";
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import StatCounter from "@/components/StatCounter";
+import ProblemSection from "@/components/ProblemSection";
+import SolutionSection from "@/components/SolutionSection";
+import LogoMarquee from "@/components/LogoMarquee";
+import HowItWorks from "@/components/HowItWorks";
+import IndustryCards from "@/components/IndustryCards";
+import WorkflowExplorerPreview from "@/components/WorkflowExplorerPreview";
+import ComparisonTable from "@/components/ComparisonTable";
+import PricingSection from "@/components/PricingSection";
+import FAQSection from "@/components/FAQSection";
+import GuaranteeSection from "@/components/GuaranteeSection";
+import FinalCTA from "@/components/FinalCTA";
+import Footer from "@/components/Footer";
+import MobileStickyBar from "@/components/MobileStickyBar";
+import ExitIntentPopup from "@/components/ExitIntentPopup";
+import PurchaseToast from "@/components/PurchaseToast";
 
 const Index = () => {
+  useScrollReveal();
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background text-foreground">
+      <AnnouncementBar />
+      <Navbar />
+      <HeroSection />
+      <StatCounter />
+      <ProblemSection />
+      <SolutionSection />
+      <LogoMarquee />
+      <HowItWorks />
+      <IndustryCards />
+      <WorkflowExplorerPreview />
+      <ComparisonTable />
+      <PricingSection />
+      <FAQSection />
+      <GuaranteeSection />
+      <FinalCTA />
+      <Footer />
+      <MobileStickyBar />
+      <ExitIntentPopup />
+      <PurchaseToast />
     </div>
   );
 };
