@@ -8,7 +8,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-hero pt-24 pb-16 px-4 overflow-hidden max-w-full">
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-hero pt-24 pb-16 px-6 sm:px-4 overflow-hidden">
       {/* Subtle grid pattern */}
       <div className="absolute inset-0 opacity-5" style={{
         backgroundImage: "linear-gradient(hsl(var(--muted-foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--muted-foreground)) 1px, transparent 1px)",
