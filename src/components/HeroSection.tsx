@@ -32,7 +32,7 @@ const HeroSection = () => {
           </div>
         </div>
 
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6 tracking-tight">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6 tracking-tight">
           Stop Wasting{" "}
           <span className="text-primary">20+ Hours</span>{" "}
           Every Week on Tasks AI Can Automate
