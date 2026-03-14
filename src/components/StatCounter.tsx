@@ -1,18 +1,18 @@
 import { useCountUp } from "@/hooks/useCountUp";
-import { Bot, Clock, Star, Users } from "lucide-react";
+import { Bot, Clock, Layers, Wrench } from "lucide-react";
 
 const stats = [
-  { icon: Bot, value: 8000, suffix: "+", label: "Workflows", prefix: "" },
-  { icon: Users, value: 3200, suffix: "+", label: "Happy Customers", prefix: "" },
+  { icon: Bot, value: 8000, suffix: "+", label: "n8n Workflows", prefix: "" },
+  { icon: Layers, value: 1967, suffix: "", label: "Categorized Templates", prefix: "" },
+  { icon: Wrench, value: 74, suffix: "+", label: "Tool Integrations", prefix: "" },
   { icon: Clock, value: 20, suffix: "+", label: "Hrs Saved/Week", prefix: "" },
-  { icon: Star, value: 49, suffix: "", label: "Star Rating", prefix: "", decimal: true },
 ];
 
-const StatItem = ({ icon: Icon, value, suffix, label, prefix, decimal }: {
-  icon: typeof Bot; value: number; suffix: string; label: string; prefix?: string; decimal?: boolean;
+const StatItem = ({ icon: Icon, value, suffix, label, prefix }: {
+  icon: typeof Bot; value: number; suffix: string; label: string; prefix?: string;
 }) => {
   const { count, ref } = useCountUp(value);
-  const display = decimal ? (count / 10).toFixed(1) : count.toLocaleString();
+  const display = count.toLocaleString();
 
   return (
     <div ref={ref} className="text-center px-4 py-6">

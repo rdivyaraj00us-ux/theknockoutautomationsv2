@@ -8,6 +8,8 @@ import SolutionSection from "@/components/SolutionSection";
 import LogoMarquee from "@/components/LogoMarquee";
 import HowItWorks from "@/components/HowItWorks";
 import IndustryCards from "@/components/IndustryCards";
+import WhatYouCanBuild from "@/components/WhatYouCanBuild";
+import VideoSection from "@/components/VideoSection";
 import WorkflowExplorerPreview from "@/components/WorkflowExplorerPreview";
 import ComparisonTable from "@/components/ComparisonTable";
 import PricingSection from "@/components/PricingSection";
@@ -33,6 +35,8 @@ const Index = () => {
       <LogoMarquee />
       <HowItWorks />
       <IndustryCards />
+      <WhatYouCanBuild />
+      <VideoSection />
       <WorkflowExplorerPreview />
       <ComparisonTable />
       <PricingSection />

@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react";
-import { PURCHASE_NAMES } from "@/lib/constants";
-import { ShoppingCart } from "lucide-react";
+import { WORKFLOW_CATEGORIES } from "@/lib/constants";
+import { Eye } from "lucide-react";
 
 const PurchaseToast = () => {
-  const [current, setCurrent] = useState<{ name: string; city: string } | null>(null);
+  const [current, setCurrent] = useState<string | null>(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    let idx = Math.floor(Math.random() * PURCHASE_NAMES.length);
+    let idx = Math.floor(Math.random() * WORKFLOW_CATEGORIES.length);
 
     const show = () => {
-      setCurrent(PURCHASE_NAMES[idx]);
+      setCurrent(WORKFLOW_CATEGORIES[idx]);
       setVisible(true);
       setTimeout(() => setVisible(false), 4000);
-      idx = (idx + 1) % PURCHASE_NAMES.length;
+      idx = (idx + 1) % WORKFLOW_CATEGORIES.length;
     };
 
     // First show after 15s
@@ -35,13 +35,13 @@ const PurchaseToast = () => {
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
       }`}
     >
-      <div className="h-9 w-9 rounded-full bg-[hsl(var(--success))]/20 flex items-center justify-center shrink-0">
-        <ShoppingCart className="h-4 w-4 text-[hsl(var(--success))]" />
+      <div className="h-9 w-9 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
+        <Eye className="h-4 w-4 text-primary" />
       </div>
       <div>
-        <p className="text-sm font-semibold">{current.name}</p>
+        <p className="text-sm font-semibold">Trending Now</p>
         <p className="text-xs text-muted-foreground">
-          from {current.city} just purchased · <span className="text-[hsl(var(--success))]">Verified</span>
+          Someone is viewing <span className="text-primary">{current}</span> workflows
         </p>
       </div>
     </div>

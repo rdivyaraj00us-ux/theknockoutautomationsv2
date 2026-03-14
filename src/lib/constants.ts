@@ -1,27 +1,27 @@
 export const SHOPIFY_CHECKOUT_URL = "https://theknockoutautomations.myshopify.com/cart/51439558426935:1";
 
 export const PRICING = {
-  original: 497,
+  original: 149,
   sale: 24.99,
-  discount: 95,
+  discount: 83,
   perWorkflow: "0.003",
 };
 
 export const STATS = {
   workflows: "8,000+",
-  customers: "3,200+",
+  categories: "19",
   hoursSaved: "20+",
-  rating: "4.9",
+  tools: "74+",
 };
 
 export const BRAND = {
   name: "The Knockout Automations",
   tagline: "8,000+ Ready-to-Use n8n Workflow Templates",
-  cin: "U62099HR2025PTC128194",
+  cin: "U58199GJ2025PTC169791",
   email: "support@theknockoutautomations.com",
 };
 
-export function getCheckoutUrl(): string {
+export function getCheckoutUrl(discount?: string): string {
   if (typeof window === "undefined") return SHOPIFY_CHECKOUT_URL;
   const params = new URLSearchParams(window.location.search);
   const utm = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
@@ -30,26 +30,31 @@ export function getCheckoutUrl(): string {
     const val = params.get(key);
     if (val) utmParams.set(key, val);
   });
+  if (discount) utmParams.set("discount", discount);
   const utmString = utmParams.toString();
   return utmString ? `${SHOPIFY_CHECKOUT_URL}?${utmString}` : SHOPIFY_CHECKOUT_URL;
 }
 
-export const PURCHASE_NAMES = [
-  { name: "Rahul M.", city: "Mumbai" },
-  { name: "Sarah K.", city: "Austin" },
-  { name: "James T.", city: "London" },
-  { name: "Priya S.", city: "Bangalore" },
-  { name: "Michael R.", city: "Toronto" },
-  { name: "Ana L.", city: "São Paulo" },
-  { name: "David W.", city: "Sydney" },
-  { name: "Emma C.", city: "Berlin" },
-  { name: "Carlos F.", city: "Mexico City" },
-  { name: "Lisa N.", city: "Singapore" },
-  { name: "Ahmed H.", city: "Dubai" },
-  { name: "Sophie B.", city: "Paris" },
-  { name: "Kevin Z.", city: "San Francisco" },
-  { name: "Maria G.", city: "Madrid" },
-  { name: "Tom P.", city: "Chicago" },
+export const WORKFLOW_CATEGORIES = [
+  "AI & Machine Learning",
+  "Messaging & Chatbots",
+  "Data & Analytics",
+  "Email & Communication",
+  "CRM & Sales",
+  "Social Media",
+  "DevOps & IT",
+  "E-commerce",
+  "Marketing & SEO",
+  "Finance & Accounting",
+  "HR & Recruiting",
+  "Project Management",
+  "Content Creation",
+  "Customer Support",
+  "Lead Generation",
+  "File Management",
+  "Scheduling & Calendar",
+  "Reporting & Dashboards",
+  "Security & Compliance",
 ];
 
 export const FAQ_DATA = [
@@ -79,7 +84,7 @@ export const FAQ_DATA = [
   },
   {
     q: "Can I use these for my clients or agency?",
-    a: "Absolutely! Many of our customers are agencies and freelancers who customize these workflows for their clients. There's no restriction on commercial use.",
+    a: "Absolutely! Many customers are agencies and freelancers who customize these workflows for their clients. There's no restriction on commercial use.",
   },
   {
     q: "What if a workflow doesn't work for my use case?",
@@ -87,7 +92,7 @@ export const FAQ_DATA = [
   },
   {
     q: "Why is it so cheap? What's the catch?",
-    a: "No catch. This is launch pricing to build our customer base. We want to get these workflows into as many hands as possible. The price will increase significantly after this promotion ends.",
+    a: "No catch. We're a registered company (TKOA Private Limited, CIN: U58199GJ2025PTC169791) offering launch pricing to build our reputation. Unlike competitors who include resell rights and attract resellers, we keep our library exclusive to actual users. This is a limited-time investment in our customer base — the price will increase.",
   },
   {
     q: "Do you offer refunds?",

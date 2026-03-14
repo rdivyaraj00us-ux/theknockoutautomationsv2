@@ -11,7 +11,7 @@ const AnnouncementBar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-center gap-2 flex-wrap">
         <span className="hidden sm:inline">🔥</span>
         <span>
-          Limited Time: {PRICING.discount}% OFF Launch Pricing — 8,000+ Workflows for Just ${PRICING.sale}
+          Launch Pricing: {PRICING.discount}% OFF — 8,000+ Workflows for Just ${PRICING.sale}
         </span>
         {!expired && (
           <span className="font-mono bg-primary-foreground/20 rounded px-2 py-0.5 text-xs sm:text-sm">

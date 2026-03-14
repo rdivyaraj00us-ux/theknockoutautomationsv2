@@ -20,11 +20,15 @@ const WorkflowExplorerPreview = () => {
   const workflows = (workflowData as any).workflows as Workflow[];
 
   const filtered = useMemo(() => {
-    if (!search.trim()) return workflows.slice(0, 8);
+    if (!search.trim()) return workflows.slice(0, 12);
     const q = search.toLowerCase();
     return workflows
-      .filter((w) => w.name.toLowerCase().includes(q) || w.categories.some((c) => c.toLowerCase().includes(q)))
-      .slice(0, 8);
+      .filter((w) =>
+        w.name.toLowerCase().includes(q) ||
+        w.categories.some((c) => c.toLowerCase().includes(q)) ||
+        w.tools.some((t) => t.toLowerCase().includes(q))
+      )
+      .slice(0, 12);
   }, [search, workflows]);
 
   return (
@@ -45,7 +49,7 @@ const WorkflowExplorerPreview = () => {
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <input
               type="text"
-              placeholder="Search workflows (e.g., 'Slack', 'AI', 'E-commerce')..."
+              placeholder="Search workflows or tools (e.g., 'Slack', 'AI', 'OpenAI')..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="w-full bg-card border border-border rounded-xl pl-10 pr-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
