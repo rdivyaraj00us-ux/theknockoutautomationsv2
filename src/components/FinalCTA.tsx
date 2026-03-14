@@ -15,7 +15,7 @@ const FinalCTA = () => {
           Ready to <span className="text-primary">Automate Everything</span>?
         </h2>
         <p className="text-muted-foreground text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
-          Join 3,200+ professionals who stopped wasting time on repetitive tasks.
+          Join automation professionals who stopped wasting time on repetitive tasks.
           Get 8,000+ workflows for just $24.99 — before the price goes up.
         </p>
         <Button
@@ -28,7 +28,7 @@ const FinalCTA = () => {
           <ArrowRight className="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1" />
         </Button>
         <p className="text-muted-foreground text-xs mt-6 italic">
-          "The best investment I've made for my business this year." — Sarah K., Agency Owner
+          100% risk-free. 30-day money-back guarantee, no questions asked.
         </p>
       </div>
     </section>

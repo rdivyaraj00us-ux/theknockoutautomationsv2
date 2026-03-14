@@ -1,23 +1,23 @@
-import { AlertTriangle, DollarSign, Clock } from "lucide-react";
+import { AlertTriangle, Clock, Puzzle } from "lucide-react";
 
 const problems = [
   {
     icon: Clock,
-    title: "20+ Hours Wasted Weekly",
-    description: "You're manually doing tasks that should be automated — data entry, follow-ups, report generation, file management.",
-    cost: "$2,000+/month in lost productivity",
+    title: "Building From Scratch Takes Weeks",
+    description: "Every new automation means starting from zero — wiring up nodes, handling auth tokens, dealing with pagination, rate limits, and error handling. A single workflow can take days to get right.",
+    cost: "Weeks lost per project",
   },
   {
-    icon: DollarSign,
-    title: "Hiring Developers Is Expensive",
-    description: "Custom automation development costs $5,000-$50,000+. And you still need to maintain, update, and debug every workflow.",
-    cost: "$10,000+/year in dev costs",
+    icon: Puzzle,
+    title: "Community Templates Are Fragmented",
+    description: "Free n8n templates are scattered across forums, GitHub repos, and blog posts. Most are outdated, poorly documented, or break after n8n updates. Finding one that actually works is a full-time job.",
+    cost: "Hours wasted searching & debugging",
   },
   {
     icon: AlertTriangle,
-    title: "Starting From Scratch Every Time",
-    description: "Building workflows from zero means weeks of trial and error. Most people give up before seeing results.",
-    cost: "Months of wasted time",
+    title: "Every Client Project Starts Over",
+    description: "Agencies and freelancers rebuild the same integrations for every client — CRM syncs, lead routing, report generation. Without a template library, you're reinventing the wheel on every project.",
+    cost: "Thousands in unbillable hours",
   },
 ];
 
@@ -27,10 +27,10 @@ const ProblemSection = () => (
       <div className="text-center mb-16 reveal">
         <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">The Problem</p>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4">
-          Your Time Is <span className="text-primary">Bleeding Money</span>
+          Why Building n8n Workflows <span className="text-primary">From Scratch</span> Hurts
         </h2>
         <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-          Every day without automation is costing you more than you think.
+          You already chose n8n. Now you need templates that actually work — not another week of debugging.
         </p>
       </div>
 

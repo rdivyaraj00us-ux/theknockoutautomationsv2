@@ -48,7 +48,7 @@ const ExitIntentPopup = () => {
         </p>
 
         <Button
-          onClick={() => { window.location.href = getCheckoutUrl(); }}
+          onClick={() => { window.location.href = getCheckoutUrl("WAIT10"); }}
           className="w-full bg-gradient-cta hover:opacity-90 font-bold py-6 text-base animate-pulse-glow"
         >
           <Zap className="h-4 w-4 mr-2" />

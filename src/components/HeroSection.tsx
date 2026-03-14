@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { getCheckoutUrl, STATS } from "@/lib/constants";
-import { ArrowRight, Shield, Star, Users, Zap } from "lucide-react";
+import { getCheckoutUrl } from "@/lib/constants";
+import { ArrowRight, Shield, Zap, Package, Clock } from "lucide-react";
 
 const HeroSection = () => {
   const handleCTA = () => {
@@ -19,28 +19,27 @@ const HeroSection = () => {
         {/* Micro-trust bar */}
         <div className="flex items-center justify-center gap-4 sm:gap-6 mb-8 flex-wrap">
           <div className="flex items-center gap-1.5 text-xs sm:text-sm text-muted-foreground">
-            <Star className="h-4 w-4 text-[hsl(var(--gold))]" fill="currentColor" />
-            <span>{STATS.rating}/5 Rating</span>
+            <Package className="h-4 w-4 text-primary" />
+            <span>Instant Digital Delivery</span>
           </div>
           <div className="flex items-center gap-1.5 text-xs sm:text-sm text-muted-foreground">
-            <Users className="h-4 w-4 text-primary" />
-            <span>{STATS.customers} Customers</span>
+            <Clock className="h-4 w-4 text-[hsl(var(--gold))]" />
+            <span>Import & Run in 2 Min</span>
           </div>
           <div className="flex items-center gap-1.5 text-xs sm:text-sm text-muted-foreground">
             <Shield className="h-4 w-4 text-[hsl(var(--success))]" />
-            <span>30-Day Guarantee</span>
+            <span>30-Day Money-Back Guarantee</span>
           </div>
         </div>
 
         <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6 tracking-tight">
-          Stop Wasting{" "}
-          <span className="text-primary">20+ Hours</span>{" "}
-          Every Week on Tasks AI Can Automate
+          <span className="text-primary">8,000+ n8n Workflows.</span>{" "}
+          $24.99.{" "}
+          <span className="block sm:inline">Import & Run in 2 Minutes.</span>
         </h1>
 
         <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 leading-relaxed">
-          Get <span className="text-foreground font-semibold">8,000+ production-ready n8n workflow templates</span> for just $24.99.
-          Automate your business in minutes, not months.
+          Stop building workflows from scratch. Get <span className="text-foreground font-semibold">production-ready n8n templates</span> across 19 categories and 74+ integrations — ready to import, customize, and deploy.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
