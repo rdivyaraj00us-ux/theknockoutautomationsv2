@@ -79,7 +79,7 @@ const PricingSection = () => {
 
         <p className="text-muted-foreground text-sm mt-8 reveal reveal-delay-2">
           <span className="text-[hsl(var(--gold))] font-semibold">⚡ {PRICING.discount}% OFF</span> — Launch pricing won't last forever.
-          Join 3,200+ automation professionals who already have access.
+          Get 8,000+ production-ready n8n workflows before the price increases.
         </p>
       </div>
     </section>
