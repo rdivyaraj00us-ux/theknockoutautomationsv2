@@ -8,11 +8,11 @@ import ProblemSection from "@/components/ProblemSection";
 import SolutionSection from "@/components/SolutionSection";
 import LogoMarquee from "@/components/LogoMarquee";
 import HowItWorks from "@/components/HowItWorks";
-import IndustryCards from "@/components/IndustryCards";
 import SkillLevels from "@/components/SkillLevels";
+import IndustryCards from "@/components/IndustryCards";
+import WorkflowExplorerPreview from "@/components/WorkflowExplorerPreview";
 import WhatYouCanBuild from "@/components/WhatYouCanBuild";
 import VideoSection from "@/components/VideoSection";
-import WorkflowExplorerPreview from "@/components/WorkflowExplorerPreview";
 import ComparisonTable from "@/components/ComparisonTable";
 import PricingSection from "@/components/PricingSection";
 import FAQSection from "@/components/FAQSection";
@@ -28,26 +28,49 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <ScrollProgress />
       <AnnouncementBar />
       <Navbar />
-      <ScrollProgress />
+
+      {/* ═══ CORE CONVERSION FLOW (screens 1-6) ═══ */}
+      {/* Screen 1-2: Hook + proof */}
       <HeroSection />
       <StatCounter />
-      <ProblemSection />
-      <SolutionSection />
-      <LogoMarquee />
-      <HowItWorks />
-      <SkillLevels />
-      <IndustryCards />
-      <WhatYouCanBuild />
-      <VideoSection />
-      <WorkflowExplorerPreview />
-      <ComparisonTable />
+
+      {/* Screen 3: Price (MOVED UP — critical for mobile) */}
       <PricingSection />
-      <FAQSection />
+
+      {/* Screen 4: What's inside */}
+      <SolutionSection />
+
+      {/* Screen 5: Trust strip */}
+      <LogoMarquee />
+
+      {/* Screen 6: Guarantee */}
       <GuaranteeSection />
+
+      {/* ═══ SUPPORTING CONTENT (for scrollers who need more) ═══ */}
+      {/* These sections convince the undecided */}
+      <ProblemSection />
+      <HowItWorks />
+      <WhatYouCanBuild />
+
+      {/* ═══ HIDDEN ON MOBILE, VISIBLE ON DESKTOP ═══ */}
+      {/* These sections add depth but are too long for mobile */}
+      <div className="hidden md:block">
+        <SkillLevels />
+        <IndustryCards />
+        <VideoSection />
+        <WorkflowExplorerPreview />
+        <ComparisonTable />
+      </div>
+
+      {/* ═══ CLOSING FLOW (both mobile + desktop) ═══ */}
+      <FAQSection />
       <FinalCTA />
       <Footer />
+
+      {/* ═══ OVERLAYS ═══ */}
       <MobileStickyBar />
       <ExitIntentPopup />
       <PurchaseToast />
