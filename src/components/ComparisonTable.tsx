@@ -42,7 +42,7 @@ const ComparisonTable = () => (
               <th className="text-center py-4 px-6 font-bold text-primary border-x border-border bg-primary/5">
                 Knockout
               </th>
-              <th className="text-center py-4 px-6 font-semibold text-muted-foreground">Others</th>
+              <th className="text-center py-4 px-6 font-semibold text-muted-foreground">Typical n8n Bundles</th>
             </tr>
           </thead>
           <tbody>
