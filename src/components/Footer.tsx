@@ -3,7 +3,7 @@ import { Zap } from "lucide-react";
 import { BRAND } from "@/lib/constants";
 
 const Footer = () => (
-  <footer className="border-t border-border bg-card/30 py-12 px-4">
+  <footer className="border-t border-border bg-card/30 py-12 pb-24 md:pb-12 px-4">
     <div className="max-w-6xl mx-auto">
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
         <div>
