@@ -186,7 +186,7 @@ const HeroSection = () => {
 
         <h1 className="text-[2.5rem] sm:text-6xl md:text-7xl lg:text-[5.2rem] font-black leading-[1.05] tracking-tight mb-7">
           <span className="block">
-            <span className="text-gradient">8,000+</span> n8n Workflows.
+            <span className="text-gradient">2,000+</span> n8n Workflows.
           </span>
           <span className="block mt-1">
             <span className="text-[hsl(var(--gold))]">$24.99.</span>{" "}
