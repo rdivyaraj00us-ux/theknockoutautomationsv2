@@ -8,6 +8,7 @@ import SolutionSection from "@/components/SolutionSection";
 import LogoMarquee from "@/components/LogoMarquee";
 import HowItWorks from "@/components/HowItWorks";
 import IndustryCards from "@/components/IndustryCards";
+import SkillLevels from "@/components/SkillLevels";
 import WhatYouCanBuild from "@/components/WhatYouCanBuild";
 import VideoSection from "@/components/VideoSection";
 import WorkflowExplorerPreview from "@/components/WorkflowExplorerPreview";
@@ -35,6 +36,7 @@ const Index = () => {
       <LogoMarquee />
       <HowItWorks />
       <IndustryCards />
+      <SkillLevels />
       <WhatYouCanBuild />
       <VideoSection />
       <WorkflowExplorerPreview />
