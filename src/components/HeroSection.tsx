@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { getCheckoutUrl } from "@/lib/constants";
 import { ArrowRight, Shield, Zap, Clock, Download } from "lucide-react";
 
-/* ───────── animated node-network canvas ───────── */
 interface Node {
   x: number;
   y: number;
@@ -63,7 +62,6 @@ function useNodeCanvas(canvasRef: React.RefObject<HTMLCanvasElement | null>) {
       if (!running) return;
       const W = canvas.offsetWidth;
       const H = canvas.offsetHeight;
-
       ctx.clearRect(0, 0, W, H);
       const nodes = nodesRef.current;
       const mx = mouseRef.current.x;
@@ -75,7 +73,6 @@ function useNodeCanvas(canvasRef: React.RefObject<HTMLCanvasElement | null>) {
         n.pulse += n.pulseSpeed;
         if (n.x < 0 || n.x > W) n.vx *= -1;
         if (n.y < 0 || n.y > H) n.vy *= -1;
-
         const dx = n.x - mx;
         const dy = n.y - my;
         const dist = Math.sqrt(dx * dx + dy * dy);
@@ -150,7 +147,6 @@ function useNodeCanvas(canvasRef: React.RefObject<HTMLCanvasElement | null>) {
   }, [canvasRef]);
 }
 
-/* ───────── hero component ───────── */
 const HeroSection = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   useNodeCanvas(canvasRef);
@@ -160,96 +156,90 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-6 sm:px-4 overflow-hidden">
-      {/* Background layers */}
-      <div className="absolute inset-0 bg-gradient-hero" />
-
-      {/* Animated node canvas */}
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 w-full h-full"
-        style={{ pointerEvents: "auto" }}
+    <section className="relative min-h-[100vh] flex items-center justify-center pt-24 pb-20 px-4 overflow-hidden">
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 80% 60% at 50% 30%, hsl(0 76% 57% / 0.06) 0%, transparent 60%), radial-gradient(ellipse 60% 50% at 80% 70%, hsl(44 81% 61% / 0.04) 0%, transparent 50%), hsl(240 33% 8%)",
+        }}
       />
 
-      {/* Content */}
+      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" style={{ opacity: 0.6 }} />
+
       <div className="relative z-10 max-w-5xl mx-auto text-center">
-        {/* Trust badges */}
-        <div className="flex items-center justify-center gap-4 sm:gap-6 mb-8 flex-wrap">
+        <div className="flex items-center justify-center gap-3 sm:gap-5 mb-10 flex-wrap">
           {[
             { icon: Download, label: "Instant Digital Delivery" },
             { icon: Clock, label: "Import & Run in 2 Min" },
             { icon: Shield, label: "30-Day Money-Back Guarantee" },
           ].map((b) => (
-            <div key={b.label} className="flex items-center gap-1.5 text-xs sm:text-sm text-muted-foreground">
-              <b.icon className="h-4 w-4 text-primary" />
-              <span>{b.label}</span>
-            </div>
+            <span
+              key={b.label}
+              className="flex items-center gap-1.5 text-[11px] sm:text-xs tracking-wide text-muted-foreground bg-card/60 backdrop-blur-sm border border-border rounded-full px-3 py-1.5"
+            >
+              <b.icon className="h-3 w-3 text-primary" />
+              {b.label}
+            </span>
           ))}
         </div>
 
-        {/* Headline */}
-        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6 tracking-tight">
-          <span className="text-primary">8,000+ n8n Workflows.</span>{" "}
-          <span className="block sm:inline">
-            $24.99.{" "}
-            <span className="text-foreground">Import & Run in 2 Minutes.</span>
+        <h1 className="text-[2.5rem] sm:text-6xl md:text-7xl lg:text-[5.2rem] font-black leading-[1.05] tracking-tight mb-7">
+          <span className="block">
+            <span className="text-gradient">8,000+</span> n8n Workflows.
+          </span>
+          <span className="block mt-1">
+            <span className="text-[hsl(var(--gold))]">$24.99.</span>{" "}
+            <span className="text-muted-foreground text-[0.6em] font-bold">Import & Run in 2 Minutes.</span>
           </span>
         </h1>
 
-        {/* Sub-headline */}
-        <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 leading-relaxed">
+        <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
           Stop building workflows from scratch. Get{" "}
-          <span className="text-foreground font-semibold">production-ready n8n templates</span>{" "}
-          across 19 categories and 74+ integrations — ready to import, customize, and deploy.
+          <span className="text-foreground font-semibold">production-ready n8n templates</span> across 19 categories and
+          74+ integrations — ready to import, customize, and deploy.
         </p>
 
-        {/* Product pills */}
-        <div className="flex items-center justify-center gap-3 sm:gap-4 mb-10 flex-wrap">
+        <div className="flex items-center justify-center gap-3 mb-8 flex-wrap">
           {[
             { num: "8,000+", label: "Workflows" },
             { num: "74+", label: "Integrations" },
             { num: "19", label: "Categories" },
           ].map((p) => (
-            <div
-              key={p.label}
-              className="flex flex-col items-center px-5 py-3 rounded-xl border border-border bg-card/50 backdrop-blur-sm"
-            >
-              <span className="text-lg sm:text-xl font-bold text-primary">{p.num}</span>
-              <span className="text-xs text-muted-foreground">{p.label}</span>
+            <div key={p.label} className="flex items-center gap-2 bg-card border border-border rounded-xl px-4 py-2.5">
+              <span className="text-lg font-black text-primary font-mono">{p.num}</span>
+              <span className="text-xs text-muted-foreground font-medium">{p.label}</span>
             </div>
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="flex flex-col items-center gap-4 mb-8">
-          <div>
-            <Button
-              onClick={handleCTA}
-              size="lg"
-              className="bg-gradient-cta hover:opacity-90 text-lg px-10 py-7 font-bold glow-red animate-pulse-glow group"
-            >
-              <Zap className="h-5 w-5 mr-2" />
-              Get Instant Access — $24.99
-              <ArrowRight className="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1" />
-            </Button>
-          </div>
+        <div className="flex flex-col items-center gap-4">
+          <Button
+            onClick={handleCTA}
+            size="lg"
+            className="bg-gradient-cta hover:opacity-90 text-base sm:text-lg px-10 py-7 font-bold glow-red animate-pulse-glow group"
+          >
+            <Zap className="h-5 w-5 mr-2" />
+            Get Instant Access — $24.99
+            <ArrowRight className="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1" />
+          </Button>
 
-          {/* Micro guarantees */}
-          <div className="flex items-center justify-center gap-6 text-xs sm:text-sm text-muted-foreground flex-wrap">
+          <div className="flex items-center gap-4 sm:gap-6 text-[11px] sm:text-xs text-muted-foreground flex-wrap justify-center">
             <span>✓ Instant Download</span>
             <span>✓ One-Time Payment</span>
             <span>✓ 30-Day Money Back</span>
             <span>✓ Lifetime Access</span>
           </div>
 
-          {/* Explorer teaser */}
-          <a href="/workflows" className="text-sm text-primary hover:underline mt-2">
+          <a
+            href="/workflows"
+            className="mt-2 text-xs text-primary hover:underline underline-offset-2 transition-colors"
+          >
             Browse 1,967 workflows in our live explorer before you buy →
           </a>
         </div>
       </div>
 
-      {/* Bottom fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
     </section>
   );
