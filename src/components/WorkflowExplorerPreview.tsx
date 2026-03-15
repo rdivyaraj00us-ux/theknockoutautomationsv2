@@ -46,9 +46,10 @@ const WorkflowExplorerPreview = () => {
 
         <div className="reveal reveal-delay-1 max-w-md mx-auto mb-10">
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
             <input
               type="text"
+              aria-label="Search workflows"
               placeholder="Search workflows or tools (e.g., 'Slack', 'AI', 'OpenAI')..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
