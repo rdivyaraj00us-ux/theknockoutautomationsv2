@@ -65,7 +65,7 @@ const Workflows = () => {
             </Link>
             <h1 className="text-3xl sm:text-4xl font-black mb-2">Workflow Explorer</h1>
             <p className="text-muted-foreground">
-              Browse {allWorkflows.length.toLocaleString()} workflows. The full bundle includes 8,000+.
+              Browse {allWorkflows.length.toLocaleString()} workflows. The full bundle includes 2,000+.
             </p>
           </div>
 
@@ -128,7 +128,7 @@ const Workflows = () => {
               </div>
 
               <div className="mt-8 p-4 rounded-xl border border-primary bg-primary/5">
-                <p className="text-sm font-semibold mb-2">Get All 8,000+</p>
+                <p className="text-sm font-semibold mb-2">Get All 2,000+</p>
                 <p className="text-xs text-muted-foreground mb-3">Unlock the full library for just $24.99</p>
                 <Button
                   onClick={() => { window.location.href = getCheckoutUrl(); }}

@@ -3,7 +3,7 @@ import { getCheckoutUrl, PRICING } from "@/lib/constants";
 import { ArrowRight, Check, Gift, Shield, Zap } from "lucide-react";
 
 const inclusions = [
-  "8,000+ ready-to-use n8n workflows",
+  "2,000+ ready-to-use n8n workflows",
   "19 categories, 74+ integrations",
   "Instant download access",
   "Lifetime updates & access",
@@ -106,7 +106,7 @@ const PricingSection = () => {
 
         <p className="text-[hsl(var(--muted-foreground))] text-sm mt-8 reveal reveal-delay-2">
           <span className="text-[hsl(var(--gold))] font-semibold">⚡ {PRICING.discount}% OFF</span> — Launch pricing
-          won't last forever. Get 8,000+ production-ready n8n workflows before the price increases.
+          won't last forever. Get 2,000+ production-ready n8n workflows before the price increases.
         </p>
       </div>
     </section>

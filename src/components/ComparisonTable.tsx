@@ -1,7 +1,7 @@
 import { Check, X } from "lucide-react";
 
 const features = [
-  { feature: "Pre-built workflows", us: "8,000+", them: "100-500", better: true },
+  { feature: "Pre-built workflows", us: "2,000+", them: "100-500", better: true },
   { feature: "Price", us: "$24.99 one-time", them: "$29-99/month", better: true },
   { feature: "Tool integrations", us: "74+", them: "10-30", better: true },
   { feature: "n8n compatible", us: true, them: true, better: false },

@@ -44,7 +44,7 @@ const ExitIntentPopup = () => {
         <h3 className="text-2xl font-black mb-3">Wait! Don't Leave Empty-Handed</h3>
         <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
           Use code <span className="font-mono font-bold text-[hsl(var(--gold))] bg-[hsl(var(--gold))]/10 px-2 py-0.5 rounded">WAIT10</span> for
-          an extra 10% off. That's {PRICING.discount}%+ savings on 8,000+ workflows.
+          an extra 10% off. That's {PRICING.discount}%+ savings on 2,000+ workflows.
         </p>
 
         <Button

@@ -40,7 +40,7 @@ const WorkflowExplorerPreview = () => {
             Preview Our <span className="text-primary">Workflow Library</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Search through {workflows.length.toLocaleString()} workflows. This is just a preview — the full bundle includes 8,000+.
+            Search through {workflows.length.toLocaleString()} workflows. This is just a preview — the full bundle includes 2,000+.
           </p>
         </div>
 

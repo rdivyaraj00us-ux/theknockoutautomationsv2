@@ -16,7 +16,7 @@ const FinalCTA = () => {
         </h2>
         <p className="text-muted-foreground text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
           Join automation professionals who stopped wasting time on repetitive tasks.
-          Get 8,000+ workflows for just $24.99 — before the price goes up.
+          Get 2,000+ workflows for just $24.99 — before the price goes up.
         </p>
         <Button
           onClick={handleCTA}
