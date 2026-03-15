@@ -16,9 +16,9 @@ const Navbar = () => {
 
   const navLinks = [
     { label: "Workflows", href: "/workflows" },
-    { label: "Use Cases", href: "#use-cases" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "FAQ", href: "#faq" },
+    { label: "Use Cases", href: "/#use-cases" },
+    { label: "Pricing", href: "/#pricing" },
+    { label: "FAQ", href: "/#faq" },
   ];
 
   const handleCTA = () => {
