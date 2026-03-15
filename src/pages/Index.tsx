@@ -37,8 +37,8 @@ const Index = () => {
       <SolutionSection />
       <LogoMarquee />
       <HowItWorks />
-      <IndustryCards />
       <SkillLevels />
+      <IndustryCards />
       <WhatYouCanBuild />
       <VideoSection />
       <WorkflowExplorerPreview />
