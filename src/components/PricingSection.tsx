@@ -3,7 +3,7 @@ import { getCheckoutUrl, PRICING } from "@/lib/constants";
 import { ArrowRight, Check, Gift, Shield, Zap } from "lucide-react";
 
 const inclusions = [
-  "8,000+ ready-to-use n8n workflows",
+  "2,000+ ready-to-use n8n workflows",
   "19 categories, 74+ integrations",
   "Instant download access",
   "Lifetime updates & access",
