@@ -8,18 +8,26 @@ const PurchaseToast = () => {
 
   useEffect(() => {
     let idx = Math.floor(Math.random() * WORKFLOW_CATEGORIES.length);
+    let showCount = 0;
+    const MAX_SHOWS = 5;
 
     const show = () => {
+      if (showCount >= MAX_SHOWS) return;
+      showCount++;
       setCurrent(WORKFLOW_CATEGORIES[idx]);
       setVisible(true);
       setTimeout(() => setVisible(false), 4000);
       idx = (idx + 1) % WORKFLOW_CATEGORIES.length;
     };
 
-    // First show after 15s
     const initial = setTimeout(show, 15000);
-    // Then every 30-45s
-    const interval = setInterval(show, 30000 + Math.random() * 15000);
+    const interval = setInterval(() => {
+      if (showCount >= MAX_SHOWS) {
+        clearInterval(interval);
+        return;
+      }
+      show();
+    }, 30000 + Math.random() * 15000);
 
     return () => {
       clearTimeout(initial);
