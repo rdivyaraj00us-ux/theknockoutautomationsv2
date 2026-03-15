@@ -2,7 +2,7 @@ import { useCountUp } from "@/hooks/useCountUp";
 import { Bot, Clock, Layers, Wrench } from "lucide-react";
 
 const stats = [
-  { icon: Bot, value: 8000, suffix: "+", label: "n8n Workflows", prefix: "" },
+  { icon: Bot, value: 2000, suffix: "+", label: "n8n Workflows", prefix: "" },
   { icon: Layers, value: 1967, suffix: "", label: "Categorized Templates", prefix: "" },
   { icon: Wrench, value: 74, suffix: "+", label: "Tool Integrations", prefix: "" },
   { icon: Clock, value: 20, suffix: "+", label: "Hrs Saved/Week", prefix: "" },

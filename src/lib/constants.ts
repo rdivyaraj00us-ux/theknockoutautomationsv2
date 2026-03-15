@@ -4,11 +4,11 @@ export const PRICING = {
   original: 149,
   sale: 24.99,
   discount: 83,
-  perWorkflow: "0.003",
+  perWorkflow: "0.01",
 };
 
 export const STATS = {
-  workflows: "8,000+",
+  workflows: "2,000+",
   categories: "19",
   hoursSaved: "20+",
   tools: "74+",
@@ -16,7 +16,7 @@ export const STATS = {
 
 export const BRAND = {
   name: "The Knockout Automations",
-  tagline: "8,000+ Ready-to-Use n8n Workflow Templates",
+  tagline: "2,000+ Ready-to-Use n8n Workflow Templates",
   cin: "U58199GJ2025PTC169791",
   email: "support@theknockoutautomations.com",
 };
@@ -60,7 +60,7 @@ export const WORKFLOW_CATEGORIES = [
 export const FAQ_DATA = [
   {
     q: "What exactly do I get for $24.99?",
-    a: "You get instant access to 8,000+ ready-to-use n8n workflow templates covering 19 categories — from AI & automation to CRM, marketing, e-commerce, and more. Every workflow is a downloadable JSON file you can import directly into n8n.",
+    a: "You get instant access to 2,000+ ready-to-use n8n workflow templates covering 19 categories — from AI & automation to CRM, marketing, e-commerce, and more. Every workflow is a downloadable JSON file you can import directly into n8n.",
   },
   {
     q: "Do I need coding skills to use these workflows?",
@@ -72,7 +72,7 @@ export const FAQ_DATA = [
   },
   {
     q: "Is this a subscription or one-time payment?",
-    a: "One-time payment. Pay $24.99 once and you own all 8,000+ workflows forever. No recurring charges, no hidden fees, no upsells.",
+    a: "One-time payment. Pay $24.99 once and you own all 2,000+ workflows forever. No recurring charges, no hidden fees, no upsells.",
   },
   {
     q: "What tools and integrations are included?",
@@ -92,7 +92,7 @@ export const FAQ_DATA = [
   },
   {
     q: "Why is it so cheap? What's the catch?",
-    a: "No catch. We're a registered company (TKOA Private Limited, CIN: U58199GJ2025PTC169791) offering launch pricing to build our reputation. Unlike competitors who include resell rights and attract resellers, we keep our library exclusive to actual users. This is a limited-time investment in our customer base — the price will increase.",
+    a: "No catch. We're a registered company (TKOA Private Limited, CIN: U58199GJ2025PTC169791) offering launch pricing to build our reputation. This is a limited-time investment in our customer base — the price will increase.",
   },
   {
     q: "Do you offer refunds?",

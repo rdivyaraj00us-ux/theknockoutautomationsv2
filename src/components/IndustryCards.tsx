@@ -76,7 +76,7 @@ const IndustryCards = () => (
           Workflows for <span className="text-[hsl(var(--primary))]">Every Use Case</span>
         </h2>
         <p className="text-[hsl(var(--muted-foreground))] max-w-xl mx-auto">
-          Real counts from our catalogued library. The full bundle includes 8,000+ across all categories.
+          Real counts from our catalogued library. The full bundle includes 2,000+ across all categories.
         </p>
       </div>
 

@@ -202,7 +202,7 @@ const HeroSection = () => {
 
         <div className="flex items-center justify-center gap-3 mb-8 flex-wrap">
           {[
-            { num: "8,000+", label: "Workflows" },
+            { num: "2,000+", label: "Workflows" },
             { num: "74+", label: "Integrations" },
             { num: "19", label: "Categories" },
           ].map((p) => (

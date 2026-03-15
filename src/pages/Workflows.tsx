@@ -128,7 +128,7 @@ const Workflows = () => {
               </div>
 
               <div className="mt-8 p-4 rounded-xl border border-primary bg-primary/5">
-                <p className="text-sm font-semibold mb-2">Get All 8,000+</p>
+                <p className="text-sm font-semibold mb-2">Get All 2,000+</p>
                 <p className="text-xs text-muted-foreground mb-3">Unlock the full library for just $24.99</p>
                 <Button
                   onClick={() => { window.location.href = getCheckoutUrl(); }}

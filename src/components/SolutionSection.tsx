@@ -89,7 +89,7 @@ const SolutionSection = () => {
                 <div className="flex items-center justify-between pt-4 border-t border-border">
                   <div className="flex items-center gap-4">
                     {[
-                      { n: "8,000+", l: "Workflows" },
+                      { n: "2,000+", l: "Workflows" },
                       { n: "74+", l: "Tools" },
                       { n: "19", l: "Categories" },
                     ].map((s) => (

@@ -12,7 +12,7 @@ const Footer = () => (
             Knockout
           </div>
           <p className="text-muted-foreground text-sm leading-relaxed">
-            8,000+ production-ready n8n workflow templates to automate your entire business.
+            2,000+ production-ready n8n workflow templates to automate your entire business.
           </p>
         </div>
 
