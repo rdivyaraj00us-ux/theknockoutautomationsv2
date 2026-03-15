@@ -14,7 +14,7 @@ const categories = [
 ];
 
 const features = [
-  "8,000+ ready-to-use workflow templates",
+  "2,000+ ready-to-use workflow templates",
   "19 categories covering every business need",
   "74+ tool integrations (OpenAI, Slack, Shopify, etc.)",
   "Import & run in under 2 minutes",
