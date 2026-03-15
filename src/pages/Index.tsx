@@ -1,6 +1,7 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Navbar from "@/components/Navbar";
+import ScrollProgress from "@/components/ScrollProgress";
 import HeroSection from "@/components/HeroSection";
 import StatCounter from "@/components/StatCounter";
 import ProblemSection from "@/components/ProblemSection";
@@ -29,6 +30,7 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <AnnouncementBar />
       <Navbar />
+      <ScrollProgress />
       <HeroSection />
       <StatCounter />
       <ProblemSection />
