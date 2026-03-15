@@ -13,7 +13,18 @@ export function useScrollReveal() {
       { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
     );
 
-    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
+    const observe = () => {
+      document.querySelectorAll(".reveal:not(.visible)").forEach((el) => observer.observe(el));
+    };
+
+    observe();
+
+    const mutationObserver = new MutationObserver(observe);
+    mutationObserver.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      observer.disconnect();
+      mutationObserver.disconnect();
+    };
   }, []);
 }
