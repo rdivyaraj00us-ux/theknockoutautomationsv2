@@ -16,9 +16,9 @@ const Navbar = () => {
 
   const navLinks = [
     { label: "Workflows", href: "/workflows" },
-    { label: "Use Cases", href: "#use-cases" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "FAQ", href: "#faq" },
+    { label: "Use Cases", href: "/#use-cases" },
+    { label: "Pricing", href: "/#pricing" },
+    { label: "FAQ", href: "/#faq" },
   ];
 
   const handleCTA = () => {
@@ -42,7 +42,7 @@ const Navbar = () => {
 
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) =>
-              link.href.startsWith("#") ? (
+              link.href.includes("#") ? (
                 <a
                   key={link.label}
                   href={link.href}
@@ -81,7 +81,7 @@ const Navbar = () => {
         <div className="md:hidden bg-background/98 backdrop-blur-md border-t border-border">
           <div className="px-4 py-4 space-y-3">
             {navLinks.map((link) =>
-              link.href.startsWith("#") ? (
+              link.href.includes("#") ? (
                 <a
                   key={link.label}
                   href={link.href}
