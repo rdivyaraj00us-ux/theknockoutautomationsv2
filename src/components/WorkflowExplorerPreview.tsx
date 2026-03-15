@@ -83,7 +83,7 @@ const WorkflowExplorerPreview = () => {
                   </span>
                 ))}
               </div>
-            </div>
+            </article>
           ))}
         </div>
 
