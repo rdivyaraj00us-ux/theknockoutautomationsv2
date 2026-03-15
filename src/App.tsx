@@ -26,7 +26,7 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/workflows" element={<Workflows />} />
+            <Route path="/workflows" element={<Suspense fallback={<div className="min-h-screen flex items-center justify-center text-muted-foreground">Loading…</div>}><Workflows /></Suspense>} />
             <Route path="/docs" element={<Docs />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/refund-policy" element={<RefundPolicy />} />
