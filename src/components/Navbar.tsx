@@ -42,7 +42,7 @@ const Navbar = () => {
 
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) =>
-              link.href.startsWith("#") ? (
+              link.href.includes("#") ? (
                 <a
                   key={link.label}
                   href={link.href}
