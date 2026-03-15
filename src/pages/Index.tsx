@@ -30,6 +30,7 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <AnnouncementBar />
       <Navbar />
+      <ScrollProgress />
       <HeroSection />
       <StatCounter />
       <ProblemSection />
