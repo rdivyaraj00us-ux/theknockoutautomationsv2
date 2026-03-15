@@ -32,7 +32,7 @@ function useNodeCanvas(canvasRef: React.RefObject<HTMLCanvasElement | null>) {
     resize();
     window.addEventListener("resize", resize);
 
-    const COUNT = 40;
+    const COUNT = window.innerWidth < 768 ? 15 : 40;
     const w = () => canvas.offsetWidth;
     const h = () => canvas.offsetHeight;
 
