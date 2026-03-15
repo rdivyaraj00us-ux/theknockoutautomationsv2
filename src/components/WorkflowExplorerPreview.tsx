@@ -59,8 +59,9 @@ const WorkflowExplorerPreview = () => {
 
         <div className="reveal reveal-delay-2 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
           {filtered.map((w) => (
-            <div
+            <article
               key={w.id}
+              aria-label={`Workflow: ${w.name} — ${w.quality_label} quality, score ${w.score}/9`}
               className="rounded-xl border border-border bg-card p-5 hover:border-primary/50 transition-all group"
             >
               <div className="flex items-start justify-between mb-3">
