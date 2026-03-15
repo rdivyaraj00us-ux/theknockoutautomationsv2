@@ -81,7 +81,7 @@ const Navbar = () => {
         <div className="md:hidden bg-background/98 backdrop-blur-md border-t border-border">
           <div className="px-4 py-4 space-y-3">
             {navLinks.map((link) =>
-              link.href.startsWith("#") ? (
+              link.href.includes("#") ? (
                 <a
                   key={link.label}
                   href={link.href}
