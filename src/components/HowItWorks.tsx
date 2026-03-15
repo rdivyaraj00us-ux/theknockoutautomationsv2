@@ -4,7 +4,7 @@ const steps = [
   {
     icon: Download,
     title: "Purchase & Download",
-    description: "Get instant access to all 8,000+ workflow templates. Download the complete package in seconds.",
+    description: "Get instant access to all 2,000+ workflow templates. Download the complete package in seconds.",
   },
   {
     icon: Settings,
