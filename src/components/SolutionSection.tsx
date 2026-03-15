@@ -1,4 +1,4 @@
-import { Check } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getCheckoutUrl } from "@/lib/constants";
 
@@ -27,7 +27,6 @@ const features = [
 const SolutionSection = () => {
   return (
     <section className="py-24 sm:py-32 px-4 relative overflow-hidden">
-      {/* Background accent */}
       <div
         className="absolute top-0 left-0 w-full h-full pointer-events-none"
         style={{
@@ -37,10 +36,8 @@ const SolutionSection = () => {
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left: Product Visual — 3D card stack */}
           <div className="reveal">
             <div className="relative" style={{ perspective: "1000px" }}>
-              {/* Glow behind */}
               <div
                 className="absolute inset-0 rounded-3xl blur-3xl opacity-20"
                 style={{
@@ -48,15 +45,13 @@ const SolutionSection = () => {
                 }}
               />
 
-              {/* Main card */}
               <div
-                className="relative rounded-2xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] p-6 sm:p-8 overflow-hidden"
+                className="relative rounded-2xl border border-border bg-card p-6 sm:p-8 overflow-hidden"
                 style={{
                   transform: "rotateY(-2deg) rotateX(1deg)",
                   transformStyle: "preserve-3d",
                 }}
               >
-                {/* Header */}
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center gap-3">
                     <div className="h-10 w-10 rounded-xl bg-gradient-cta flex items-center justify-center">
@@ -64,24 +59,21 @@ const SolutionSection = () => {
                     </div>
                     <div>
                       <h3 className="font-bold text-sm">The Knockout Bundle</h3>
-                      <p className="text-[hsl(var(--muted-foreground))] text-xs">Complete n8n Workflow Library</p>
+                      <p className="text-muted-foreground text-xs">Complete n8n Workflow Library</p>
                     </div>
                   </div>
                   <div className="text-right">
-                    <span className="text-xs text-[hsl(var(--muted-foreground))] line-through">$149</span>
+                    <span className="text-xs text-muted-foreground line-through">$149</span>
                     <span className="block text-xl font-black text-[hsl(var(--gold))]">$24.99</span>
                   </div>
                 </div>
 
-                {/* Category grid */}
                 <div className="grid grid-cols-2 gap-2 mb-6">
                   {categories.map((cat, i) => (
                     <div
                       key={cat.name}
-                      className="flex items-center gap-2 rounded-lg bg-[hsl(var(--background))] border border-[hsl(var(--border))] px-3 py-2.5 group hover:border-[hsl(var(--primary))]/40 transition-colors"
-                      style={{
-                        animationDelay: `${i * 0.05}s`,
-                      }}
+                      className="flex items-center gap-2 rounded-lg bg-background border border-border px-3 py-2.5 group hover:border-primary/40 transition-colors"
+                      style={{ animationDelay: `${i * 0.05}s` }}
                     >
                       <div className="h-2 w-2 rounded-full shrink-0" style={{ backgroundColor: cat.color }} />
                       <div className="min-w-0 flex-1">
@@ -94,8 +86,7 @@ const SolutionSection = () => {
                   ))}
                 </div>
 
-                {/* Footer stats */}
-                <div className="flex items-center justify-between pt-4 border-t border-[hsl(var(--border))]">
+                <div className="flex items-center justify-between pt-4 border-t border-border">
                   <div className="flex items-center gap-4">
                     {[
                       { n: "8,000+", l: "Workflows" },
@@ -103,10 +94,8 @@ const SolutionSection = () => {
                       { n: "19", l: "Categories" },
                     ].map((s) => (
                       <div key={s.l} className="text-center">
-                        <span className="block text-sm font-black text-[hsl(var(--primary))] font-mono">{s.n}</span>
-                        <span className="text-[9px] text-[hsl(var(--muted-foreground))] uppercase tracking-wider">
-                          {s.l}
-                        </span>
+                        <span className="block text-sm font-black text-primary font-mono">{s.n}</span>
+                        <span className="text-[9px] text-muted-foreground uppercase tracking-wider">{s.l}</span>
                       </div>
                     ))}
                   </div>
@@ -117,16 +106,15 @@ const SolutionSection = () => {
                 </div>
               </div>
 
-              {/* Shadow card behind (depth effect) */}
               <div
-                className="absolute inset-0 rounded-2xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] -z-10"
+                className="absolute inset-0 rounded-2xl border border-border bg-card -z-10"
                 style={{
                   transform: "rotateY(-2deg) rotateX(1deg) translateZ(-20px) translateX(8px) translateY(8px)",
                   opacity: 0.4,
                 }}
               />
               <div
-                className="absolute inset-0 rounded-2xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] -z-20"
+                className="absolute inset-0 rounded-2xl border border-border bg-card -z-20"
                 style={{
                   transform: "rotateY(-2deg) rotateX(1deg) translateZ(-40px) translateX(16px) translateY(16px)",
                   opacity: 0.2,
@@ -135,18 +123,14 @@ const SolutionSection = () => {
             </div>
           </div>
 
-          {/* Right: Features */}
           <div className="reveal reveal-delay-2">
-            <p className="text-[hsl(var(--primary))] font-semibold text-sm uppercase tracking-widest mb-3">
-              The Solution
-            </p>
+            <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">The Solution</p>
             <h2 className="text-3xl sm:text-4xl font-black mb-4 leading-tight">
-              Everything You Need to <span className="text-[hsl(var(--primary))]">Automate Anything</span>
+              Everything You Need to <span className="text-primary">Automate Anything</span>
             </h2>
 
-            {/* Trust reframe quote */}
-            <div className="bg-[hsl(var(--card))] border-l-2 border-[hsl(var(--primary))] rounded-r-lg px-4 py-3 mb-8">
-              <p className="text-sm text-[hsl(var(--muted-foreground))] italic leading-relaxed">
+            <div className="bg-card border-l-2 border-primary rounded-r-lg px-4 py-3 mb-8">
+              <p className="text-sm text-muted-foreground italic leading-relaxed">
                 "You're not just buying workflow files. You're buying hundreds of hours of testing, debugging, and
                 optimization — so you can ship with confidence instead of gambling."
               </p>
