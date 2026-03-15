@@ -65,7 +65,7 @@ const Workflows = () => {
             </Link>
             <h1 className="text-3xl sm:text-4xl font-black mb-2">Workflow Explorer</h1>
             <p className="text-muted-foreground">
-              Browse {allWorkflows.length.toLocaleString()} workflows. The full bundle includes 8,000+.
+              Browse {allWorkflows.length.toLocaleString()} workflows. The full bundle includes 2,000+.
             </p>
           </div>
 
