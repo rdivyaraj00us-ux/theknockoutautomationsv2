@@ -1,3 +1,4 @@
+import React, { Suspense } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -5,13 +6,14 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import Index from "./pages/Index.tsx";
-import Workflows from "./pages/Workflows.tsx";
 import Docs from "./pages/Docs.tsx";
 import Contact from "./pages/Contact.tsx";
 import RefundPolicy from "./pages/RefundPolicy.tsx";
 import Privacy from "./pages/Privacy.tsx";
 import Terms from "./pages/Terms.tsx";
 import NotFound from "./pages/NotFound.tsx";
+
+const Workflows = React.lazy(() => import("./pages/Workflows.tsx"));
 
 const queryClient = new QueryClient();
 
