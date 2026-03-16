@@ -27,7 +27,7 @@ const PricingSection = () => {
             Get Everything for <span className="text-[hsl(var(--primary))]">${PRICING.sale}</span>
           </h2>
           <p className="text-[hsl(var(--muted-foreground))] text-lg mb-12">
-            That's just ${PRICING.perWorkflow} per workflow. Less than a cup of coffee for a lifetime of automation.
+            That's just ${PRICING.perWorkflow} per workflow. Less than a cup of coffee for a complete automation library.
           </p>
         </div>
 

@@ -228,7 +228,7 @@ const HeroSection = () => {
             <span>✓ Instant Download</span>
             <span>✓ One-Time Payment</span>
             <span>✓ 30-Day Money Back</span>
-            <span>✓ Lifetime Access</span>
+            <span>✓ 2,000+ Workflows</span>
           </div>
 
           <a
