@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Navbar from "@/components/Navbar";
