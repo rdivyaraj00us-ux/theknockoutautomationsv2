@@ -103,7 +103,7 @@ const Workflows = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-8">
             {/* Sidebar */}
-            <aside className={`${showFilters ? "block" : "hidden"} sm:block w-full sm:w-56 shrink-0`}>
+            <aside className={`${showFilters ? "block" : "hidden"} sm:block w-full sm:w-56 shrink-0 ${showFilters ? "mb-6 sm:mb-0" : ""}`}>
               <h3 className="font-semibold text-sm mb-3">Categories</h3>
               <div className="space-y-1">
                 <button
