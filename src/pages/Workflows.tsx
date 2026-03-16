@@ -101,7 +101,7 @@ const Workflows = () => {
             </div>
           </div>
 
-          <div className="flex gap-8">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-8">
             {/* Sidebar */}
             <aside className={`${showFilters ? "block" : "hidden"} sm:block w-full sm:w-56 shrink-0`}>
               <h3 className="font-semibold text-sm mb-3">Categories</h3>
