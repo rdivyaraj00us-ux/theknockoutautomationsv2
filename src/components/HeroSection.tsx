@@ -156,7 +156,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-[100vh] flex items-center justify-center pt-24 pb-20 px-4 overflow-hidden">
+    <section className="relative min-h-[100vh] flex items-center justify-center pt-8 pb-20 px-4 overflow-hidden">
       <div
         className="absolute inset-0"
         style={{
