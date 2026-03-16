@@ -7,7 +7,7 @@ import { BRAND } from "@/lib/constants";
 const Contact = () => (
   <div className="min-h-screen bg-background text-foreground">
     <Navbar />
-    <div className="pt-24 pb-16 px-4">
+    <div className="pt-8 pb-16 px-4">
       <div className="max-w-2xl mx-auto">
         <Link to="/" className="text-muted-foreground hover:text-foreground text-sm flex items-center gap-1 mb-6">
           <ArrowLeft className="h-4 w-4" /> Back to Home

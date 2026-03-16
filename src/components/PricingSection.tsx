@@ -6,8 +6,6 @@ const inclusions = [
   "2,000+ ready-to-use n8n workflows",
   "19 categories, 74+ integrations",
   "Instant download access",
-  "Lifetime updates & access",
-  "Commercial use license",
   "Import & run in 2 minutes",
   "30-day money-back guarantee",
   "Priority email support",
@@ -29,7 +27,7 @@ const PricingSection = () => {
             Get Everything for <span className="text-[hsl(var(--primary))]">${PRICING.sale}</span>
           </h2>
           <p className="text-[hsl(var(--muted-foreground))] text-lg mb-12">
-            That's just ${PRICING.perWorkflow} per workflow. Less than a cup of coffee for a lifetime of automation.
+            That's just ${PRICING.perWorkflow} per workflow. Less than a cup of coffee for a complete automation library.
           </p>
         </div>
 

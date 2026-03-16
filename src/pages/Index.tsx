@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Navbar from "@/components/Navbar";
@@ -25,6 +26,16 @@ import PurchaseToast from "@/components/PurchaseToast";
 
 const Index = () => {
   useScrollReveal();
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      setTimeout(() => {
+        const el = document.querySelector(hash);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 600);
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">

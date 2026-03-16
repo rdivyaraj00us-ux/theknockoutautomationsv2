@@ -101,9 +101,9 @@ const Workflows = () => {
             </div>
           </div>
 
-          <div className="flex gap-8">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-8">
             {/* Sidebar */}
-            <aside className={`${showFilters ? "block" : "hidden"} sm:block w-full sm:w-56 shrink-0`}>
+            <aside className={`${showFilters ? "block" : "hidden"} sm:block w-full sm:w-56 shrink-0 ${showFilters ? "mb-6 sm:mb-0" : ""}`}>
               <h3 className="font-semibold text-sm mb-3">Categories</h3>
               <div className="space-y-1">
                 <button
@@ -143,7 +143,7 @@ const Workflows = () => {
             {/* Grid */}
             <div className="flex-1">
               <p className="text-muted-foreground text-sm mb-4">{filtered.length} workflows found</p>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mb-8">
                 {paged.map((w) => (
                   <div key={w.id} className="rounded-xl border border-border bg-card p-5 hover:border-primary/50 transition-all">
                     <div className="flex items-start justify-between mb-3">

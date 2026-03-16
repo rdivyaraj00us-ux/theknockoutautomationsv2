@@ -18,7 +18,7 @@ export const BRAND = {
   name: "The Knockout Automations",
   tagline: "2,000+ Ready-to-Use n8n Workflow Templates",
   cin: "U58199GJ2025PTC169791",
-  email: "support@theknockoutautomations.com",
+  email: "theknockoutacademy@gmail.com",
 };
 
 export function getCheckoutUrl(discount?: string): string {

@@ -6,8 +6,6 @@ const features = [
   { feature: "Tool integrations", us: "74+", them: "10-30", better: true },
   { feature: "n8n compatible", us: true, them: true, better: false },
   { feature: "No-code friendly", us: true, them: true, better: false },
-  { feature: "Commercial use", us: true, them: false, better: true },
-  { feature: "Lifetime access", us: true, them: false, better: true },
   { feature: "One-time payment", us: true, them: false, better: true },
   { feature: "Money-back guarantee", us: "30 days", them: "None", better: true },
   { feature: "Instant download", us: true, them: false, better: true },

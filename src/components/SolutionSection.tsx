@@ -20,8 +20,6 @@ const features = [
   "Import & run in under 2 minutes",
   "No coding skills required",
   "Works with free, self-hosted n8n",
-  "Commercial use allowed (agencies welcome)",
-  "Lifetime access with one-time payment",
 ];
 
 const SolutionSection = () => {
