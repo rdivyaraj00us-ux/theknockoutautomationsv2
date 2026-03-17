@@ -71,7 +71,7 @@ const Index = () => {
       <div className="hidden md:block">
         <SkillLevels />
         <IndustryCards />
-        <VideoSection />
+        {/* <VideoSection /> */}
         <WorkflowExplorerPreview />
         <ComparisonTable />
       </div>
