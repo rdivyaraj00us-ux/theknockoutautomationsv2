@@ -72,12 +72,20 @@ const PricingSection = () => {
               ))}
             </div>
 
-            {/* Bonus */}
-            <div className="flex items-center gap-3 bg-[hsl(var(--gold))]/10 border border-[hsl(var(--gold))]/20 rounded-lg px-4 py-3 mb-8">
-              <Gift className="h-5 w-5 text-[hsl(var(--gold))] shrink-0" />
-              <span className="text-sm font-semibold">
-                <span className="text-[hsl(var(--gold))]">BONUS:</span> Top 100 Workflows Quick-Start Guide (FREE)
-              </span>
+            {/* Bonuses */}
+            <div className="space-y-2 mb-8">
+              <div className="flex items-center gap-3 bg-[hsl(var(--gold))]/10 border border-[hsl(var(--gold))]/20 rounded-lg px-4 py-3">
+                <Gift className="h-5 w-5 text-[hsl(var(--gold))] shrink-0" />
+                <span className="text-sm font-semibold">
+                  <span className="text-[hsl(var(--gold))]">BONUS 1:</span> Top 100 Workflows Quick-Start Guide (FREE)
+                </span>
+              </div>
+              <div className="flex items-center gap-3 bg-[hsl(var(--gold))]/10 border border-[hsl(var(--gold))]/20 rounded-lg px-4 py-3">
+                <Gift className="h-5 w-5 text-[hsl(var(--gold))] shrink-0" />
+                <span className="text-sm font-semibold">
+                  <span className="text-[hsl(var(--gold))]">BONUS 2:</span> Master Prompt Engineering Guidebook — 200 AI Prompts (FREE)
+                </span>
+              </div>
             </div>
 
             {/* CTA */}
