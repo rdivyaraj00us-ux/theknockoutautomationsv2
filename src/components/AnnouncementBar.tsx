@@ -10,7 +10,8 @@ const AnnouncementBar = () => {
     <div className="bg-gradient-cta text-primary-foreground py-2 px-4 text-center text-sm font-semibold relative z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-center gap-2 flex-wrap">
         <span className="hidden sm:inline">🔥</span>
-        <span>
+        <span className="sm:hidden">🔥 {PRICING.discount}% OFF — ${PRICING.sale} for 2,000+ Workflows</span>
+        <span className="hidden sm:inline">
           Launch Pricing: {PRICING.discount}% OFF — 2,000+ Workflows for Just ${PRICING.sale}
         </span>
         {!expired && (
