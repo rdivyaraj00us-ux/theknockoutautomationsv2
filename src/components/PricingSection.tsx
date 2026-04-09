@@ -4,7 +4,7 @@ import { ArrowRight, Check, Gift, Shield, Zap } from "lucide-react";
 
 const inclusions = [
   "2,000+ ready-to-use n8n workflows",
-  "19 categories, 74+ integrations",
+  "19 categories, 75+ integrations",
   "Instant download access",
   "Import & run in 2 minutes",
   "30-day money-back guarantee",

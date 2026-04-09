@@ -16,7 +16,7 @@ const categories = [
 const features = [
   "2,000+ ready-to-use workflow templates",
   "19 categories covering every business need",
-  "74+ tool integrations (OpenAI, Slack, Shopify, etc.)",
+  "75+ tool integrations (OpenAI, Slack, Shopify, etc.)",
   "Import & run in under 2 minutes",
   "No coding skills required",
   "Works with free, self-hosted n8n",
@@ -88,7 +88,7 @@ const SolutionSection = () => {
                   <div className="flex items-center gap-4">
                     {[
                       { n: "2,000+", l: "Workflows" },
-                      { n: "74+", l: "Tools" },
+                      { n: "75+", l: "Tools" },
                       { n: "19", l: "Categories" },
                     ].map((s) => (
                       <div key={s.l} className="text-center">

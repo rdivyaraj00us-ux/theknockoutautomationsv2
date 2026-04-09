@@ -201,13 +201,13 @@ const HeroSection = () => {
         <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
           Stop building workflows from scratch. Get{" "}
           <span className="text-foreground font-semibold">production-ready n8n templates</span> across 19 categories and
-          74+ integrations — ready to import, customize, and deploy.
+          75+ integrations — ready to import, customize, and deploy.
         </p>
 
         <div className="flex items-center justify-center gap-3 mb-8 flex-wrap">
           {[
             { num: "2,000+", label: "Workflows" },
-            { num: "74+", label: "Integrations" },
+            { num: "75+", label: "Integrations" },
             { num: "19", label: "Categories" },
           ].map((p) => (
             <div key={p.label} className="flex items-center gap-2 bg-card border border-border rounded-xl px-4 py-2.5">
