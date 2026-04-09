@@ -3,10 +3,11 @@ import { Button } from "@/components/ui/button";
 import { getCheckoutUrl, PRICING } from "@/lib/constants";
 import { X, Zap, CheckCircle2 } from "lucide-react";
 
-const BONUSES = [
-  "Top 100 Workflows Quick-Start Guide",
-  "Master Prompt Engineering Guidebook — 200 AI Prompts",
-  "OpenClaw + n8n Integration Guide — 50 Workflow Combos",
+const BUNDLE_ITEMS = [
+  "2,000+ n8n Workflow Templates",
+  "BONUS: Top 100 Quick-Start Guide",
+  "BONUS: 200 AI Prompts Guidebook",
+  "BONUS: OpenClaw + n8n Integration Guide",
 ];
 
 const ExitIntentPopup = () => {
@@ -52,11 +53,11 @@ const ExitIntentPopup = () => {
           an extra 10% off. That's {PRICING.discount}%+ savings on 2,000+ workflows.
         </p>
 
-        <div className="text-left mb-6 space-y-1.5">
-          {BONUSES.map((bonus, i) => (
-            <p key={i} className="flex items-start gap-2 text-xs text-muted-foreground">
-              <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 mt-0.5 shrink-0" />
-              FREE: {bonus}
+        <div className="text-left mb-5 space-y-1">
+          {BUNDLE_ITEMS.map((item, i) => (
+            <p key={i} className="flex items-start gap-1.5 text-xs text-muted-foreground">
+              <CheckCircle2 className="h-3 w-3 text-emerald-500 mt-0.5 shrink-0" />
+              {item}
             </p>
           ))}
         </div>
@@ -66,7 +67,7 @@ const ExitIntentPopup = () => {
           className="w-full bg-gradient-cta hover:opacity-90 font-bold py-6 text-base animate-pulse-glow"
         >
           <Zap className="h-4 w-4 mr-2" />
-          Claim My Discount — ${PRICING.sale}
+          Claim My Discount — $22.49
         </Button>
 
         <button
