@@ -37,7 +37,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2 text-foreground font-bold text-lg">
             <Zap className="h-6 w-6 text-primary" />
-            <span className="hidden sm:inline">The Knockout Automations</span>
+            <span className="sm:hidden">KO Automations</span><span className="hidden sm:inline">The Knockout Automations</span>
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
