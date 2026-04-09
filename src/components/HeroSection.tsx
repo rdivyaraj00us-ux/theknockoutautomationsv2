@@ -194,7 +194,7 @@ const HeroSection = () => {
           </span>
         </h1>
 
-        <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-primary bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 mb-8">
+        <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-sm font-semibold text-primary bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 mb-8">
           ⚡ NEW: Connect n8n with OpenClaw — Build AI Agents That Run Your Business 24/7
         </span>
 
