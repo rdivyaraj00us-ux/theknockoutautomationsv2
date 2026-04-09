@@ -1,7 +1,13 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { getCheckoutUrl, PRICING } from "@/lib/constants";
-import { X, Zap } from "lucide-react";
+import { X, Zap, CheckCircle2 } from "lucide-react";
+
+const BONUSES = [
+  "Top 100 Workflows Quick-Start Guide",
+  "Master Prompt Engineering Guidebook — 200 AI Prompts",
+  "OpenClaw + n8n Integration Guide — 50 Workflow Combos",
+];
 
 const ExitIntentPopup = () => {
   const [show, setShow] = useState(false);
@@ -17,7 +23,6 @@ const ExitIntentPopup = () => {
       }
     };
 
-    // Delay attaching to avoid triggering immediately
     const timeout = setTimeout(() => {
       document.addEventListener("mouseout", handler);
     }, 5000);
@@ -42,10 +47,19 @@ const ExitIntentPopup = () => {
 
         <div className="text-4xl mb-4">⏳</div>
         <h3 className="text-2xl font-black mb-3">Wait! Don't Leave Empty-Handed</h3>
-        <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
+        <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
           Use code <span className="font-mono font-bold text-[hsl(var(--gold))] bg-[hsl(var(--gold))]/10 px-2 py-0.5 rounded">WAIT10</span> for
           an extra 10% off. That's {PRICING.discount}%+ savings on 2,000+ workflows.
         </p>
+
+        <div className="text-left mb-6 space-y-1.5">
+          {BONUSES.map((bonus, i) => (
+            <p key={i} className="flex items-start gap-2 text-xs text-muted-foreground">
+              <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 mt-0.5 shrink-0" />
+              FREE: {bonus}
+            </p>
+          ))}
+        </div>
 
         <Button
           onClick={() => { window.location.href = getCheckoutUrl("WAIT10"); }}
