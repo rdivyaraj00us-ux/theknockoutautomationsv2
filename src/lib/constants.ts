@@ -11,7 +11,7 @@ export const STATS = {
   workflows: "2,000+",
   categories: "19",
   hoursSaved: "20+",
-  tools: "74+",
+  tools: "75+",
 };
 
 export const BRAND = {
@@ -76,7 +76,7 @@ export const FAQ_DATA = [
   },
   {
     q: "What tools and integrations are included?",
-    a: "Workflows cover 74+ tools including OpenAI, Google Sheets, Slack, Telegram, Shopify, HubSpot, Notion, GitHub, Gmail, WordPress, LinkedIn, Discord, Stripe, and many more.",
+    a: "Workflows cover 75+ tools including OpenAI, Google Sheets, Slack, Telegram, Shopify, HubSpot, Notion, GitHub, Gmail, WordPress, LinkedIn, Discord, Stripe, and many more.",
   },
   {
     q: "How do I access the workflows after purchase?",

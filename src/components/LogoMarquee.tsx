@@ -8,7 +8,7 @@ const LogoMarquee = () => {
       <div className="text-center mb-10 reveal">
         <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">Integrations</p>
         <h2 className="text-2xl sm:text-3xl font-black">
-          Works With <span className="text-primary">74+ Tools</span> You Already Use
+          Works With <span className="text-primary">75+ Tools</span> You Already Use
         </h2>
       </div>
 
