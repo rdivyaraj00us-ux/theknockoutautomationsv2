@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Download, Settings, Play, Wrench } from "lucide-react";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 const sections = [
   {
