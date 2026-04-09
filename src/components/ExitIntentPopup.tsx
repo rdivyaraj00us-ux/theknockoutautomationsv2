@@ -16,21 +16,39 @@ const ExitIntentPopup = () => {
   useEffect(() => {
     if (sessionStorage.getItem("knockout_exit_shown")) return;
 
-    const handler = (e: MouseEvent) => {
+    // Desktop: mouseout exit intent
+    const mouseHandler = (e: MouseEvent) => {
       if (e.clientY < 10) {
         sessionStorage.setItem("knockout_exit_shown", "1");
         setShow(true);
-        document.removeEventListener("mouseout", handler);
+        document.removeEventListener("mouseout", mouseHandler);
       }
     };
 
+    // Mobile: scroll-back-to-top after reaching 50%
+    let reachedHalf = false;
+    let lastScrollY = 0;
+    const scrollHandler = () => {
+      const y = window.scrollY;
+      const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (y > pageHeight * 0.5) reachedHalf = true;
+      if (reachedHalf && y < pageHeight * 0.15 && y < lastScrollY) {
+        sessionStorage.setItem("knockout_exit_shown", "1");
+        setShow(true);
+        window.removeEventListener("scroll", scrollHandler);
+      }
+      lastScrollY = y;
+    };
+
     const timeout = setTimeout(() => {
-      document.addEventListener("mouseout", handler);
+      document.addEventListener("mouseout", mouseHandler);
+      window.addEventListener("scroll", scrollHandler, { passive: true });
     }, 5000);
 
     return () => {
       clearTimeout(timeout);
-      document.removeEventListener("mouseout", handler);
+      document.removeEventListener("mouseout", mouseHandler);
+      window.removeEventListener("scroll", scrollHandler);
     };
   }, []);
 
