@@ -194,6 +194,10 @@ const HeroSection = () => {
           </span>
         </h1>
 
+        <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-primary bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 mb-8">
+          ✨ Now with OpenClaw Integration Guide
+        </span>
+
         <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
           Stop building workflows from scratch. Get{" "}
           <span className="text-foreground font-semibold">production-ready n8n templates</span> across 19 categories and
