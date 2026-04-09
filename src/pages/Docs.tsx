@@ -43,7 +43,9 @@ const sections = [
   },
 ];
 
-const Docs = () => (
+const Docs = () => {
+  usePageMeta("Documentation | The Knockout Automations", "Learn how to import, customize, and deploy n8n workflow templates. Quick-start guide and setup instructions.");
+  return (
   <div className="min-h-screen bg-background text-foreground">
     <Navbar />
     <div className="pt-8 pb-16 px-4">
