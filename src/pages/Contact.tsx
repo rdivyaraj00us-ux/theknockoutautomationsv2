@@ -50,6 +50,7 @@ const Contact = () => {
     </div>
     <Footer />
   </div>
-);
+  );
+};
 
 export default Contact;

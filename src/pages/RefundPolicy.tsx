@@ -3,8 +3,11 @@ import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { BRAND } from "@/lib/constants";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
-const RefundPolicy = () => (
+const RefundPolicy = () => {
+  usePageMeta("Refund Policy | The Knockout Automations", "30-day money-back guarantee on all n8n workflow template purchases. No questions asked.");
+  return (
   <div className="min-h-screen bg-background text-foreground">
     <Navbar />
     <div className="pt-8 pb-16 px-4">
