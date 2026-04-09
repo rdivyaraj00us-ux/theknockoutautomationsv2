@@ -41,6 +41,7 @@ const RefundPolicy = () => {
     </div>
     <Footer />
   </div>
-);
+  );
+};
 
 export default RefundPolicy;
