@@ -15,7 +15,12 @@ const MobileStickyBar = () => {
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-background/95 backdrop-blur-md border-t border-border p-3">
+    <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-background/95 backdrop-blur-md border-t border-border px-3 pt-2 pb-3">
+      <p className="text-xs text-center text-muted-foreground mb-1.5">
+        <span className="line-through">${PRICING.original}</span>{" "}
+        <span className="text-foreground font-semibold">${PRICING.sale}</span>{" "}
+        · 2,000+ Workflows · 3 Bonuses
+      </p>
       <Button
         onClick={() => { window.location.href = getCheckoutUrl(); }}
         className="w-full bg-gradient-cta hover:opacity-90 font-bold py-6 text-base"
