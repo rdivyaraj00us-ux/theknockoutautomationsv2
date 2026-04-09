@@ -78,6 +78,7 @@ const Docs = () => {
     </div>
     <Footer />
   </div>
-);
+  );
+};
 
 export default Docs;
