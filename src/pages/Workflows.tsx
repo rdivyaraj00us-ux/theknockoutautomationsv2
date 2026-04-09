@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import { usePageMeta } from "@/hooks/usePageMeta";
 import { Link } from "react-router-dom";
 import { Search, ArrowLeft, Filter } from "lucide-react";
 import { Button } from "@/components/ui/button";
