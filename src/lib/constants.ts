@@ -98,6 +98,10 @@ export const FAQ_DATA = [
     q: "Do you offer refunds?",
     a: "Yes! We offer a 30-day no-questions-asked money-back guarantee. If you're not satisfied for any reason, just email us and we'll refund you in full.",
   },
+  {
+    q: "Does this work with OpenClaw?",
+    a: "Yes! Your bundle includes a dedicated OpenClaw + n8n Integration Guide with 50 ready-made workflow combos. OpenClaw handles the conversational AI layer while n8n powers the backend automation — together they create a fully autonomous system.",
+  },
 ];
 
 export const INTEGRATIONS = [
