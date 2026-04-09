@@ -16,7 +16,7 @@ export function usePageMeta(title: string, description?: string) {
     }
     return () => {
       document.title = "The Knockout Automations | 2,000+ n8n Workflow Templates";
-      if (meta) meta.setAttribute("content", "Get 2,000+ production-ready n8n workflow templates for just $24.99. Automate AI, CRM, marketing, e-commerce & more. One-time payment, lifetime access.");
+      if (meta) meta.setAttribute("content", "Get 2,000+ production-ready n8n workflow templates for just $24.99. Includes OpenClaw integration guide. Automate AI, CRM, marketing, e-commerce & more.");
     };
   }, [title, description]);
 }
