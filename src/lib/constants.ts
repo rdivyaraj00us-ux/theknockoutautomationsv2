@@ -111,4 +111,5 @@ export const INTEGRATIONS = [
   "Intercom", "Freshdesk", "ClickUp", "Monday.com", "Basecamp", "Webflow",
   "Firebase", "AWS S3", "Cloudflare", "Vercel", "Docker", "Kubernetes",
   "Redis", "MongoDB", "MySQL", "Elasticsearch", "Grafana", "Prometheus",
+  "OpenClaw",
 ];
