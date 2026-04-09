@@ -67,7 +67,7 @@ const ExitIntentPopup = () => {
           className="w-full bg-gradient-cta hover:opacity-90 font-bold py-6 text-base animate-pulse-glow"
         >
           <Zap className="h-4 w-4 mr-2" />
-          Claim My Discount — $22.49
+          Claim My Discount — <span className="line-through text-muted-foreground/70 font-normal">$24.99</span>{" "}<span className="font-extrabold text-white">$22.49</span>
         </Button>
 
         <button
