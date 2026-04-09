@@ -92,7 +92,7 @@ export const FAQ_DATA = [
   },
   {
     q: "Why is it so cheap? What's the catch?",
-    a: "No catch. We're a registered company (TKOA Private Limited, CIN: U58199GJ2025PTC169791) offering launch pricing to build our reputation. This is a limited-time investment in our customer base — the price will increase.",
+    a: "No catch. We're a registered company (TKOA Private Limited) offering launch pricing to build our reputation. This is a limited-time investment in our customer base — the price will increase.",
   },
   {
     q: "Do you offer refunds?",
