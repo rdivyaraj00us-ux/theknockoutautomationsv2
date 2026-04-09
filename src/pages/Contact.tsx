@@ -3,8 +3,11 @@ import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Mail, Clock } from "lucide-react";
 import { BRAND } from "@/lib/constants";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
-const Contact = () => (
+const Contact = () => {
+  usePageMeta("Contact Us | The Knockout Automations", "Get in touch with The Knockout Automations team. Email support for n8n workflow templates.");
+  return (
   <div className="min-h-screen bg-background text-foreground">
     <Navbar />
     <div className="pt-8 pb-16 px-4">
@@ -47,6 +50,7 @@ const Contact = () => (
     </div>
     <Footer />
   </div>
-);
+  );
+};
 
 export default Contact;

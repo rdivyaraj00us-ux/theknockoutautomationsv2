@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import { usePageMeta } from "@/hooks/usePageMeta";
 import { Link } from "react-router-dom";
 import { Search, ArrowLeft, Filter } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -24,6 +25,7 @@ const allWorkflows: Workflow[] = data.workflows;
 const categories: { name: string; count: number }[] = data.categories;
 
 const Workflows = () => {
+  usePageMeta("Browse 2,000+ n8n Workflow Templates | The Knockout Automations", "Explore our collection of 2,000+ n8n workflow templates across 19 categories. Find AI, CRM, marketing, e-commerce, and more automation workflows.");
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [sortBy, setSortBy] = useState<"score" | "name">("score");

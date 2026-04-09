@@ -3,8 +3,11 @@ import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { BRAND } from "@/lib/constants";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
-const Privacy = () => (
+const Privacy = () => {
+  usePageMeta("Privacy Policy | The Knockout Automations");
+  return (
   <div className="min-h-screen bg-background text-foreground">
     <Navbar />
     <div className="pt-8 pb-16 px-4">
@@ -41,6 +44,7 @@ const Privacy = () => (
     </div>
     <Footer />
   </div>
-);
+  );
+};
 
 export default Privacy;
