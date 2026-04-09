@@ -72,19 +72,24 @@ const PricingSection = () => {
               ))}
             </div>
 
-            {/* Bonuses */}
-            <div className="space-y-2 mb-8">
-              <div className="flex items-center gap-3 bg-[hsl(var(--gold))]/10 border border-[hsl(var(--gold))]/20 rounded-lg px-4 py-3">
-                <Gift className="h-5 w-5 text-[hsl(var(--gold))] shrink-0" />
-                <span className="text-sm font-semibold">
-                  <span className="text-[hsl(var(--gold))]">BONUS 1:</span> Top 100 Workflows Quick-Start Guide (FREE)
-                </span>
-              </div>
-              <div className="flex items-center gap-3 bg-[hsl(var(--gold))]/10 border border-[hsl(var(--gold))]/20 rounded-lg px-4 py-3">
-                <Gift className="h-5 w-5 text-[hsl(var(--gold))] shrink-0" />
-                <span className="text-sm font-semibold">
-                  <span className="text-[hsl(var(--gold))]">BONUS 2:</span> Master Prompt Engineering Guidebook — 200 AI Prompts (FREE)
-                </span>
+            {/* What's Inside */}
+            <div className="mb-8">
+              <p className="text-sm font-bold uppercase tracking-wide mb-3 flex items-center justify-center gap-2">
+                <Gift className="h-4 w-4 text-[hsl(var(--gold))]" />
+                <span className="text-[hsl(var(--gold))]">What's Inside Your Bundle:</span>
+              </p>
+              <div className="space-y-2">
+                {[
+                  "2,000+ n8n Workflow Templates — Ready to import & customize",
+                  "BONUS 1: Top 100 Workflows Quick-Start Guide",
+                  "BONUS 2: Master Prompt Engineering Guidebook — 200 AI Prompts",
+                  "BONUS 3: OpenClaw + n8n Integration Guide — 50 Workflow Combos",
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-3 bg-[hsl(var(--gold))]/10 border border-[hsl(var(--gold))]/20 rounded-lg px-4 py-3">
+                    <Check className="h-4 w-4 text-[hsl(var(--success))] shrink-0" />
+                    <span className="text-sm font-semibold text-left">{item}</span>
+                  </div>
+                ))}
               </div>
             </div>
 
