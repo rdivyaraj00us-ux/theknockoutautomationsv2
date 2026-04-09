@@ -43,9 +43,13 @@ const Footer = () => (
         </div>
       </div>
 
-      <div className="border-t border-border pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
-        <p>© {new Date().getFullYear()} {BRAND.name}. All rights reserved.</p>
-        <p>CIN: {BRAND.cin}</p>
+      <div className="border-t border-border pt-6 flex flex-col items-center gap-4 text-xs text-muted-foreground">
+        <div className="flex flex-col sm:flex-row items-center justify-between w-full gap-4">
+          <p>© {new Date().getFullYear()} {BRAND.name}. All rights reserved.</p>
+        </div>
+        <p className="text-center text-muted-foreground/70">
+          n8n® is a registered trademark of n8n GmbH. {BRAND.name} is not affiliated with n8n GmbH.
+        </p>
       </div>
     </div>
   </footer>
