@@ -3,10 +3,11 @@ import { Button } from "@/components/ui/button";
 import { getCheckoutUrl, PRICING } from "@/lib/constants";
 import { X, Zap, CheckCircle2 } from "lucide-react";
 
-const BONUSES = [
-  "Top 100 Workflows Quick-Start Guide",
-  "Master Prompt Engineering Guidebook — 200 AI Prompts",
-  "OpenClaw + n8n Integration Guide — 50 Workflow Combos",
+const BUNDLE_ITEMS = [
+  "2,000+ n8n Workflow Templates",
+  "BONUS: Top 100 Quick-Start Guide",
+  "BONUS: 200 AI Prompts Guidebook",
+  "BONUS: OpenClaw + n8n Integration Guide",
 ];
 
 const ExitIntentPopup = () => {
