@@ -21,128 +21,139 @@ function useNodeCanvas(canvasRef: React.RefObject<HTMLCanvasElement | null>) {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
 
-    const resize = () => {
-      canvas.width = canvas.offsetWidth * window.devicePixelRatio;
-      canvas.height = canvas.offsetHeight * window.devicePixelRatio;
-      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
-    };
-    resize();
-    window.addEventListener("resize", resize);
+    // Delay canvas init by 2s so hero text/CTA render first
+    const delayTimer = setTimeout(() => {
+      const ctx = canvas.getContext("2d");
+      if (!ctx) return;
 
-    const COUNT = window.innerWidth < 768 ? 15 : 40;
-    const w = () => canvas.offsetWidth;
-    const h = () => canvas.offsetHeight;
+      const resize = () => {
+        canvas.width = canvas.offsetWidth * window.devicePixelRatio;
+        canvas.height = canvas.offsetHeight * window.devicePixelRatio;
+        ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+      };
+      resize();
+      window.addEventListener("resize", resize);
 
-    if (nodesRef.current.length === 0) {
-      for (let i = 0; i < COUNT; i++) {
-        nodesRef.current.push({
-          x: Math.random() * w(),
-          y: Math.random() * h(),
-          vx: (Math.random() - 0.5) * 0.3,
-          vy: (Math.random() - 0.5) * 0.3,
-          radius: 2 + Math.random() * 2,
-          pulse: Math.random() * Math.PI * 2,
-          pulseSpeed: 0.01 + Math.random() * 0.02,
+      const COUNT = window.innerWidth < 768 ? 8 : 20;
+      const w = () => canvas.offsetWidth;
+      const h = () => canvas.offsetHeight;
+
+      if (nodesRef.current.length === 0) {
+        for (let i = 0; i < COUNT; i++) {
+          nodesRef.current.push({
+            x: Math.random() * w(),
+            y: Math.random() * h(),
+            vx: (Math.random() - 0.5) * 0.3,
+            vy: (Math.random() - 0.5) * 0.3,
+            radius: 2 + Math.random() * 2,
+            pulse: Math.random() * Math.PI * 2,
+            pulseSpeed: 0.01 + Math.random() * 0.02,
+          });
+        }
+      }
+
+      const onMouseMove = (e: MouseEvent) => {
+        const rect = canvas.getBoundingClientRect();
+        mouseRef.current = { x: e.clientX - rect.left, y: e.clientY - rect.top };
+      };
+      canvas.addEventListener("mousemove", onMouseMove);
+
+      let running = true;
+
+      const draw = () => {
+        if (!running) return;
+        const W = canvas.offsetWidth;
+        const H = canvas.offsetHeight;
+        ctx.clearRect(0, 0, W, H);
+        const nodes = nodesRef.current;
+        const mx = mouseRef.current.x;
+        const my = mouseRef.current.y;
+
+        nodes.forEach((n) => {
+          n.x += n.vx;
+          n.y += n.vy;
+          n.pulse += n.pulseSpeed;
+          if (n.x < 0 || n.x > W) n.vx *= -1;
+          if (n.y < 0 || n.y > H) n.vy *= -1;
+          const dx = n.x - mx;
+          const dy = n.y - my;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 120 && dist > 0) {
+            n.x += (dx / dist) * 0.5;
+            n.y += (dy / dist) * 0.5;
+          }
         });
-      }
-    }
 
-    const onMouseMove = (e: MouseEvent) => {
-      const rect = canvas.getBoundingClientRect();
-      mouseRef.current = { x: e.clientX - rect.left, y: e.clientY - rect.top };
-    };
-    canvas.addEventListener("mousemove", onMouseMove);
-
-    let running = true;
-
-    const draw = () => {
-      if (!running) return;
-      const W = canvas.offsetWidth;
-      const H = canvas.offsetHeight;
-      ctx.clearRect(0, 0, W, H);
-      const nodes = nodesRef.current;
-      const mx = mouseRef.current.x;
-      const my = mouseRef.current.y;
-
-      nodes.forEach((n) => {
-        n.x += n.vx;
-        n.y += n.vy;
-        n.pulse += n.pulseSpeed;
-        if (n.x < 0 || n.x > W) n.vx *= -1;
-        if (n.y < 0 || n.y > H) n.vy *= -1;
-        const dx = n.x - mx;
-        const dy = n.y - my;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 120 && dist > 0) {
-          n.x += (dx / dist) * 0.5;
-          n.y += (dy / dist) * 0.5;
-        }
-      });
-
-      const CONNECTION_DIST = 140;
-      for (let i = 0; i < nodes.length; i++) {
-        for (let j = i + 1; j < nodes.length; j++) {
-          const dx = nodes[i].x - nodes[j].x;
-          const dy = nodes[i].y - nodes[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < CONNECTION_DIST) {
-            const alpha = (1 - dist / CONNECTION_DIST) * 0.15;
-            ctx.beginPath();
-            ctx.moveTo(nodes[i].x, nodes[i].y);
-            ctx.lineTo(nodes[j].x, nodes[j].y);
-            ctx.strokeStyle = `rgba(220, 60, 60, ${alpha})`;
-            ctx.lineWidth = 0.5;
-            ctx.stroke();
+        const CONNECTION_DIST = 140;
+        for (let i = 0; i < nodes.length; i++) {
+          for (let j = i + 1; j < nodes.length; j++) {
+            const dx = nodes[i].x - nodes[j].x;
+            const dy = nodes[i].y - nodes[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < CONNECTION_DIST) {
+              const alpha = (1 - dist / CONNECTION_DIST) * 0.15;
+              ctx.beginPath();
+              ctx.moveTo(nodes[i].x, nodes[i].y);
+              ctx.lineTo(nodes[j].x, nodes[j].y);
+              ctx.strokeStyle = `rgba(220, 60, 60, ${alpha})`;
+              ctx.lineWidth = 0.5;
+              ctx.stroke();
+            }
           }
         }
-      }
 
-      nodes.forEach((n) => {
-        const glow = 0.4 + Math.sin(n.pulse) * 0.3;
-        const grad = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, n.radius * 6);
-        grad.addColorStop(0, `rgba(220, 60, 60, ${glow * 0.2})`);
-        grad.addColorStop(1, "transparent");
-        ctx.beginPath();
-        ctx.arc(n.x, n.y, n.radius * 6, 0, Math.PI * 2);
-        ctx.fillStyle = grad;
-        ctx.fill();
-        ctx.beginPath();
-        ctx.arc(n.x, n.y, n.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(220, 60, 60, ${0.6 + glow * 0.4})`;
-        ctx.fill();
-      });
+        nodes.forEach((n) => {
+          const glow = 0.4 + Math.sin(n.pulse) * 0.3;
+          const grad = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, n.radius * 6);
+          grad.addColorStop(0, `rgba(220, 60, 60, ${glow * 0.2})`);
+          grad.addColorStop(1, "transparent");
+          ctx.beginPath();
+          ctx.arc(n.x, n.y, n.radius * 6, 0, Math.PI * 2);
+          ctx.fillStyle = grad;
+          ctx.fill();
+          ctx.beginPath();
+          ctx.arc(n.x, n.y, n.radius, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(220, 60, 60, ${0.6 + glow * 0.4})`;
+          ctx.fill();
+        });
 
-      const time = Date.now() / 1000;
-      for (let i = 0; i < nodes.length; i++) {
-        for (let j = i + 1; j < nodes.length; j++) {
-          const dx = nodes[i].x - nodes[j].x;
-          const dy = nodes[i].y - nodes[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < CONNECTION_DIST && (i + j) % 5 === 0) {
-            const t = (time * 0.4 + i * 0.3) % 1;
-            const px = nodes[i].x + (nodes[j].x - nodes[i].x) * t;
-            const py = nodes[i].y + (nodes[j].y - nodes[i].y) * t;
-            ctx.beginPath();
-            ctx.arc(px, py, 1.5, 0, Math.PI * 2);
-            ctx.fillStyle = "rgba(234, 179, 56, 0.8)";
-            ctx.fill();
+        const time = Date.now() / 1000;
+        for (let i = 0; i < nodes.length; i++) {
+          for (let j = i + 1; j < nodes.length; j++) {
+            const dx = nodes[i].x - nodes[j].x;
+            const dy = nodes[i].y - nodes[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < CONNECTION_DIST && (i + j) % 5 === 0) {
+              const t = (time * 0.4 + i * 0.3) % 1;
+              const px = nodes[i].x + (nodes[j].x - nodes[i].x) * t;
+              const py = nodes[i].y + (nodes[j].y - nodes[i].y) * t;
+              ctx.beginPath();
+              ctx.arc(px, py, 1.5, 0, Math.PI * 2);
+              ctx.fillStyle = "rgba(234, 179, 56, 0.8)";
+              ctx.fill();
+            }
           }
         }
-      }
 
-      frameRef.current = requestAnimationFrame(draw);
-    };
+        frameRef.current = requestAnimationFrame(draw);
+      };
 
-    draw();
+      draw();
+
+      cleanupRef = () => {
+        running = false;
+        cancelAnimationFrame(frameRef.current);
+        window.removeEventListener("resize", resize);
+        canvas.removeEventListener("mousemove", onMouseMove);
+      };
+    }, 2000);
+
+    let cleanupRef: (() => void) | undefined;
 
     return () => {
-      running = false;
-      cancelAnimationFrame(frameRef.current);
-      window.removeEventListener("resize", resize);
-      canvas.removeEventListener("mousemove", onMouseMove);
+      clearTimeout(delayTimer);
+      cleanupRef?.();
     };
   }, [canvasRef]);
 }
