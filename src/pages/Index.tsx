@@ -6,6 +6,7 @@ import ScrollProgress from "@/components/ScrollProgress";
 import HeroSection from "@/components/HeroSection";
 import StatCounter from "@/components/StatCounter";
 
+const InlineCTA = lazy(() => import("@/components/InlineCTA"));
 const PricingSection = lazy(() => import("@/components/PricingSection"));
 const SolutionSection = lazy(() => import("@/components/SolutionSection"));
 const LogoMarquee = lazy(() => import("@/components/LogoMarquee"));
@@ -48,6 +49,10 @@ const Index = () => {
       {/* ═══ CORE CONVERSION FLOW (screens 1-6) ═══ */}
       <HeroSection />
       <StatCounter />
+
+      <Suspense fallback={null}>
+        <InlineCTA />
+      </Suspense>
 
       <Suspense fallback={<LazyFallback />}>
         <PricingSection />
