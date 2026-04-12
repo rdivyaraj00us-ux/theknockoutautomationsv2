@@ -1,28 +1,30 @@
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Navbar from "@/components/Navbar";
 import ScrollProgress from "@/components/ScrollProgress";
 import HeroSection from "@/components/HeroSection";
 import StatCounter from "@/components/StatCounter";
-import ProblemSection from "@/components/ProblemSection";
-import SolutionSection from "@/components/SolutionSection";
-import LogoMarquee from "@/components/LogoMarquee";
-import HowItWorks from "@/components/HowItWorks";
-import SkillLevels from "@/components/SkillLevels";
-import IndustryCards from "@/components/IndustryCards";
-import WorkflowExplorerPreview from "@/components/WorkflowExplorerPreview";
-import WhatYouCanBuild from "@/components/WhatYouCanBuild";
-import VideoSection from "@/components/VideoSection";
-import ComparisonTable from "@/components/ComparisonTable";
-import PricingSection from "@/components/PricingSection";
-import FAQSection from "@/components/FAQSection";
-import GuaranteeSection from "@/components/GuaranteeSection";
-import FinalCTA from "@/components/FinalCTA";
-import Footer from "@/components/Footer";
-import MobileStickyBar from "@/components/MobileStickyBar";
-import ExitIntentPopup from "@/components/ExitIntentPopup";
-import PurchaseToast from "@/components/PurchaseToast";
+
+const PricingSection = lazy(() => import("@/components/PricingSection"));
+const SolutionSection = lazy(() => import("@/components/SolutionSection"));
+const LogoMarquee = lazy(() => import("@/components/LogoMarquee"));
+const GuaranteeSection = lazy(() => import("@/components/GuaranteeSection"));
+const ProblemSection = lazy(() => import("@/components/ProblemSection"));
+const HowItWorks = lazy(() => import("@/components/HowItWorks"));
+const WhatYouCanBuild = lazy(() => import("@/components/WhatYouCanBuild"));
+const SkillLevels = lazy(() => import("@/components/SkillLevels"));
+const IndustryCards = lazy(() => import("@/components/IndustryCards"));
+const WorkflowExplorerPreview = lazy(() => import("@/components/WorkflowExplorerPreview"));
+const ComparisonTable = lazy(() => import("@/components/ComparisonTable"));
+const FAQSection = lazy(() => import("@/components/FAQSection"));
+const FinalCTA = lazy(() => import("@/components/FinalCTA"));
+const Footer = lazy(() => import("@/components/Footer"));
+const MobileStickyBar = lazy(() => import("@/components/MobileStickyBar"));
+const ExitIntentPopup = lazy(() => import("@/components/ExitIntentPopup"));
+const PurchaseToast = lazy(() => import("@/components/PurchaseToast"));
+
+const LazyFallback = () => <div className="min-h-[200px]" />;
 
 const Index = () => {
   useScrollReveal();
@@ -44,47 +46,63 @@ const Index = () => {
       <Navbar />
 
       {/* ═══ CORE CONVERSION FLOW (screens 1-6) ═══ */}
-      {/* Screen 1-2: Hook + proof */}
       <HeroSection />
       <StatCounter />
 
-      {/* Screen 3: Price (MOVED UP — critical for mobile) */}
-      <PricingSection />
+      <Suspense fallback={<LazyFallback />}>
+        <PricingSection />
+      </Suspense>
 
-      {/* Screen 4: What's inside */}
-      <SolutionSection />
+      <Suspense fallback={<LazyFallback />}>
+        <SolutionSection />
+      </Suspense>
 
-      {/* Screen 5: Trust strip */}
-      <LogoMarquee />
+      <Suspense fallback={<LazyFallback />}>
+        <LogoMarquee />
+      </Suspense>
 
-      {/* Screen 6: Guarantee */}
-      <GuaranteeSection />
+      <Suspense fallback={<LazyFallback />}>
+        <GuaranteeSection />
+      </Suspense>
 
-      {/* ═══ SUPPORTING CONTENT (for scrollers who need more) ═══ */}
-      {/* These sections convince the undecided */}
-      <ProblemSection />
-      <HowItWorks />
-      <WhatYouCanBuild />
+      {/* ═══ SUPPORTING CONTENT ═══ */}
+      <Suspense fallback={<LazyFallback />}>
+        <ProblemSection />
+      </Suspense>
+      <Suspense fallback={<LazyFallback />}>
+        <HowItWorks />
+      </Suspense>
+      <Suspense fallback={<LazyFallback />}>
+        <WhatYouCanBuild />
+      </Suspense>
 
       {/* ═══ HIDDEN ON MOBILE, VISIBLE ON DESKTOP ═══ */}
-      {/* These sections add depth but are too long for mobile */}
       <div className="hidden md:block">
-        <SkillLevels />
-        <IndustryCards />
-        {/* <VideoSection /> */}
-        <WorkflowExplorerPreview />
-        <ComparisonTable />
+        <Suspense fallback={<LazyFallback />}>
+          <SkillLevels />
+          <IndustryCards />
+          <WorkflowExplorerPreview />
+          <ComparisonTable />
+        </Suspense>
       </div>
 
-      {/* ═══ CLOSING FLOW (both mobile + desktop) ═══ */}
-      <FAQSection />
-      <FinalCTA />
-      <Footer />
+      {/* ═══ CLOSING FLOW ═══ */}
+      <Suspense fallback={<LazyFallback />}>
+        <FAQSection />
+      </Suspense>
+      <Suspense fallback={<LazyFallback />}>
+        <FinalCTA />
+      </Suspense>
+      <Suspense fallback={<LazyFallback />}>
+        <Footer />
+      </Suspense>
 
       {/* ═══ OVERLAYS ═══ */}
-      <MobileStickyBar />
-      <ExitIntentPopup />
-      <PurchaseToast />
+      <Suspense fallback={null}>
+        <MobileStickyBar />
+        <ExitIntentPopup />
+        <PurchaseToast />
+      </Suspense>
     </div>
   );
 };
