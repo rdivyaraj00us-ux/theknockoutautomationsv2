@@ -147,7 +147,7 @@ function useNodeCanvas(canvasRef: React.RefObject<HTMLCanvasElement | null>) {
         window.removeEventListener("resize", resize);
         canvas.removeEventListener("mousemove", onMouseMove);
       };
-    }, 2000);
+    }, 3000);
 
     let cleanupRef: (() => void) | undefined;
 
@@ -167,7 +167,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-[100vh] flex items-center justify-center pt-8 pb-20 px-4 overflow-hidden">
+    <section className="relative min-h-[100svh] flex items-center justify-center pt-8 pb-12 sm:pb-20 px-4 overflow-hidden">
       <div
         className="absolute inset-0"
         style={{
@@ -179,7 +179,7 @@ const HeroSection = () => {
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" style={{ opacity: 0.6 }} />
 
       <div className="relative z-10 max-w-5xl mx-auto text-center">
-        <div className="flex items-center justify-center gap-3 sm:gap-5 mb-10 flex-wrap">
+        <div className="flex items-center justify-center gap-3 sm:gap-5 mb-6 sm:mb-10 flex-wrap">
           {[
             { icon: Download, label: "Instant Digital Delivery" },
             { icon: Clock, label: "Import & Run in 2 Min" },
@@ -195,7 +195,7 @@ const HeroSection = () => {
           ))}
         </div>
 
-        <h1 className="text-[2.5rem] sm:text-6xl md:text-7xl lg:text-[5.2rem] font-black leading-[1.05] tracking-tight mb-7">
+        <h1 className="text-[2.5rem] sm:text-6xl md:text-7xl lg:text-[5.2rem] font-black leading-[1.05] tracking-tight mb-5 sm:mb-7">
           <span className="block">
             <span className="text-gradient">2,000+</span> n8n Workflows.
           </span>
@@ -205,30 +205,8 @@ const HeroSection = () => {
           </span>
         </h1>
 
-        <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-sm font-semibold text-primary bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 mb-8">
-          ⚡ NEW: Connect n8n with OpenClaw — Build AI Agents That Run Your Business 24/7
-        </span>
-
-        <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-          Stop building workflows from scratch. Get{" "}
-          <span className="text-foreground font-semibold">production-ready n8n templates</span> across 19 categories and
-          75+ integrations — ready to import, customize, and deploy.
-        </p>
-
-        <div className="flex items-center justify-center gap-3 mb-8 flex-wrap">
-          {[
-            { num: "2,000+", label: "Workflows" },
-            { num: "75+", label: "Integrations" },
-            { num: "19", label: "Categories" },
-          ].map((p) => (
-            <div key={p.label} className="flex items-center gap-2 bg-card border border-border rounded-xl px-4 py-2.5">
-              <span className="text-lg font-black text-primary font-mono">{p.num}</span>
-              <span className="text-xs text-muted-foreground font-medium">{p.label}</span>
-            </div>
-          ))}
-        </div>
-
-        <div className="flex flex-col items-center gap-4">
+        {/* CTA moved directly under headline for mobile visibility */}
+        <div className="flex flex-col items-center gap-3 mb-6 sm:mb-8">
           <Button
             onClick={handleCTA}
             size="lg"
@@ -245,14 +223,37 @@ const HeroSection = () => {
             <span>✓ 30-Day Money Back</span>
             <span>✓ 2,000+ Workflows</span>
           </div>
-
-          <a
-            href="/workflows"
-            className="mt-2 text-xs text-primary hover:underline underline-offset-2 transition-colors"
-          >
-            Browse 1,967 workflows in our live explorer before you buy →
-          </a>
         </div>
+
+        <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-sm font-semibold text-primary bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 mb-5 sm:mb-8">
+          ⚡ NEW: Connect n8n with OpenClaw — Build AI Agents That Run Your Business 24/7
+        </span>
+
+        <p className="text-sm sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-6 sm:mb-10 leading-relaxed">
+          Stop building workflows from scratch. Get{" "}
+          <span className="text-foreground font-semibold">production-ready n8n templates</span> across 19 categories and
+          75+ integrations — ready to import, customize, and deploy.
+        </p>
+
+        <div className="hidden sm:flex items-center justify-center gap-3 mb-8 flex-wrap">
+          {[
+            { num: "2,000+", label: "Workflows" },
+            { num: "75+", label: "Integrations" },
+            { num: "19", label: "Categories" },
+          ].map((p) => (
+            <div key={p.label} className="flex items-center gap-2 bg-card border border-border rounded-xl px-4 py-2.5">
+              <span className="text-lg font-black text-primary font-mono">{p.num}</span>
+              <span className="text-xs text-muted-foreground font-medium">{p.label}</span>
+            </div>
+          ))}
+        </div>
+
+        <a
+          href="/workflows"
+          className="text-xs text-primary hover:underline underline-offset-2 transition-colors"
+        >
+          Browse 1,967 workflows in our live explorer before you buy →
+        </a>
       </div>
 
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
