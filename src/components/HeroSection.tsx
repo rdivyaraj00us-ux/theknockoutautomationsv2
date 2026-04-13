@@ -187,7 +187,7 @@ const HeroSection = () => {
           ].map((b) => (
             <span
               key={b.label}
-              className="flex items-center gap-1.5 text-[11px] sm:text-xs tracking-wide text-muted-foreground bg-card/60 backdrop-blur-sm border border-border rounded-full px-3 py-1.5"
+              className="flex items-center gap-1.5 text-[11px] sm:text-xs tracking-wide text-muted-foreground bg-card/60 backdrop-blur-sm border border-border rounded-full px-3 py-1.5 pointer-events-none cursor-default"
             >
               <b.icon className="h-3 w-3 text-primary" />
               {b.label}
