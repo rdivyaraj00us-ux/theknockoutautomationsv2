@@ -1,4 +1,4 @@
-export const SHOPIFY_CHECKOUT_URL = "https://lovable-project-f6ew7.myshopify.com/cart/49853282066743:1?channel=buy_button";
+export const SHOPIFY_CHECKOUT_URL = "https://theknockoutautomations.myshopify.com/cart/51439558426935:1?channel=buy_button";
 
 export const PRICING = {
   original: 149,
