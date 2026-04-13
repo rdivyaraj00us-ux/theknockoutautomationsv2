@@ -1,4 +1,4 @@
-export const SHOPIFY_CHECKOUT_URL = "https://theknockoutautomations.myshopify.com/cart/51439558426935:1";
+export const SHOPIFY_CHECKOUT_URL = "https://lovable-project-f6ew7.myshopify.com/cart/49853282066743:1?channel=buy_button";
 
 export const PRICING = {
   original: 149,
@@ -21,18 +21,17 @@ export const BRAND = {
   email: "theknockoutacademy@gmail.com",
 };
 
-export function getCheckoutUrl(discount?: string): string {
+export function getCheckoutUrl(discountCode?: string): string {
   if (typeof window === "undefined") return SHOPIFY_CHECKOUT_URL;
   const params = new URLSearchParams(window.location.search);
-  const utm = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
-  const utmParams = new URLSearchParams();
-  utm.forEach((key) => {
+  let url = SHOPIFY_CHECKOUT_URL;
+  if (discountCode) url += '&discount=' + discountCode;
+  const utmKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "utm_id"];
+  utmKeys.forEach((key) => {
     const val = params.get(key);
-    if (val) utmParams.set(key, val);
+    if (val) url += '&' + key + '=' + encodeURIComponent(val);
   });
-  if (discount) utmParams.set("discount", discount);
-  const utmString = utmParams.toString();
-  return utmString ? `${SHOPIFY_CHECKOUT_URL}?${utmString}` : SHOPIFY_CHECKOUT_URL;
+  return url;
 }
 
 export const WORKFLOW_CATEGORIES = [
