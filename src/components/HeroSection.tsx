@@ -19,6 +19,7 @@ function useNodeCanvas(canvasRef: React.RefObject<HTMLCanvasElement | null>) {
   const frameRef = useRef(0);
 
   useEffect(() => {
+    if (window.innerWidth < 768) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
 
