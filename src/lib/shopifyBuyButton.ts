@@ -48,6 +48,6 @@ export async function openCheckout(discountCode?: string) {
     },
   });
 
-  const checkoutUrl = `https://lovable-project-f6ew7.myshopify.com/cart/49853282066743:1?channel=buy_button${discountCode ? '&discount=' + discountCode : ''}`;
+  const checkoutUrl = `https://theknockoutautomations.myshopify.com/cart/51439558426935:1?channel=buy_button${discountCode ? '&discount=' + discountCode : ''}`;
   window.location.href = checkoutUrl;
 }
