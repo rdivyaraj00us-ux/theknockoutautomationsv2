@@ -187,7 +187,7 @@ const HeroSection = () => {
           ].map((b) => (
             <span
               key={b.label}
-              className="flex items-center gap-1.5 text-[11px] sm:text-xs tracking-wide text-muted-foreground bg-card/60 backdrop-blur-sm border border-border rounded-full px-3 py-1.5"
+              className="flex items-center gap-1.5 text-[11px] sm:text-xs tracking-wide text-muted-foreground bg-card/60 backdrop-blur-sm border border-border rounded-full px-3 py-1.5 pointer-events-none cursor-default"
             >
               <b.icon className="h-3 w-3 text-primary" />
               {b.label}
@@ -195,7 +195,7 @@ const HeroSection = () => {
           ))}
         </div>
 
-        <h1 className="text-[2.5rem] sm:text-6xl md:text-7xl lg:text-[5.2rem] font-black leading-[1.05] tracking-tight mb-5 sm:mb-7">
+        <h1 className="text-[2.5rem] sm:text-6xl md:text-7xl lg:text-[5.2rem] font-black leading-[1.05] tracking-tight mb-5 sm:mb-7 pointer-events-none cursor-default">
           <span className="block">
             <span className="text-gradient">2,000+</span> n8n Workflows.
           </span>
