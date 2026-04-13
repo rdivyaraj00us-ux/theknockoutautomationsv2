@@ -195,7 +195,7 @@ const HeroSection = () => {
           ))}
         </div>
 
-        <h1 className="text-[2.5rem] sm:text-6xl md:text-7xl lg:text-[5.2rem] font-black leading-[1.05] tracking-tight mb-5 sm:mb-7">
+        <h1 className="text-[2.5rem] sm:text-6xl md:text-7xl lg:text-[5.2rem] font-black leading-[1.05] tracking-tight mb-5 sm:mb-7 pointer-events-none cursor-default">
           <span className="block">
             <span className="text-gradient">2,000+</span> n8n Workflows.
           </span>
