@@ -48,6 +48,6 @@ export async function openCheckout(discountCode?: string) {
     },
   });
 
-  const checkoutUrl = `https://theknockoutautomations.myshopify.com/cart/51439558426935:1?channel=buy_button${discountCode ? '&discount=' + discountCode : ''}`;
+  const checkoutUrl = `https://checkout.dodopayments.com/buy/pdt_0NcjrfHtQQbPxzvoM7Iif?quantity=1`;
   window.location.href = checkoutUrl;
 }
