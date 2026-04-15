@@ -1,4 +1,4 @@
-export const SHOPIFY_CHECKOUT_URL = "https://theknockoutautomations.myshopify.com/cart/51439558426935:1?channel=buy_button";
+export const SHOPIFY_CHECKOUT_URL = "https://checkout.dodopayments.com/buy/pdt_0NcjrfHtQQbPxzvoM7Iif?quantity=1";
 
 export const PRICING = {
   original: 149,
