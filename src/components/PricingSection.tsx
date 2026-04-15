@@ -110,7 +110,7 @@ const PricingSection = () => {
                 <Shield className="h-4 w-4 text-[hsl(var(--success))]" />
                 30-Day Money-Back Guarantee
               </span>
-              <span>🔒 Secure Checkout via Shopify</span>
+              <span>🔒 Secure Checkout</span>
             </div>
           </div>
         </div>

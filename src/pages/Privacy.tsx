@@ -21,7 +21,7 @@ const Privacy = () => {
         <div className="space-y-6 text-muted-foreground text-sm leading-relaxed">
           <div>
             <h3 className="text-foreground font-bold text-lg mb-2">Information We Collect</h3>
-            <p>When you purchase from us, we collect your name, email address, and payment information necessary to process your order. Payment processing is handled securely by Shopify.</p>
+            <p>When you purchase from us, we collect your name, email address, and payment information necessary to process your order. Payment processing is handled securely by Dodo Payments.</p>
           </div>
           <div>
             <h3 className="text-foreground font-bold text-lg mb-2">How We Use Your Information</h3>
@@ -33,7 +33,7 @@ const Privacy = () => {
           </div>
           <div>
             <h3 className="text-foreground font-bold text-lg mb-2">Data Security</h3>
-            <p>All transactions are processed through Shopify's secure checkout. We do not store your credit card information on our servers.</p>
+            <p>All transactions are processed through Dodo Payments' secure checkout. We do not store your credit card information on our servers.</p>
           </div>
           <div>
             <h3 className="text-foreground font-bold text-lg mb-2">Contact</h3>
