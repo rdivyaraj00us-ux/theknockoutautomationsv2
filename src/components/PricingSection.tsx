@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { PRICING } from "@/lib/constants";
 import { trackAndRedirect } from "@/lib/tracking";
+import { ArrowRight, Check, Gift, Shield, Zap } from "lucide-react";
 
 const inclusions = [
   "2,000+ ready-to-use n8n workflows",
