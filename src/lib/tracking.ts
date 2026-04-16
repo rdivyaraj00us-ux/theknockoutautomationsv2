@@ -16,6 +16,7 @@ export function trackAndRedirect(discountCode?: string): void {
   const value = discountCode === "WAIT10" ? 22.49 : PRICING.sale;
 
   // Meta Pixel
+  console.log("[Tracking] CTA clicked, fbq available:", typeof window.fbq === "function");
   if (typeof window.fbq === "function") {
     window.fbq("track", "InitiateCheckout", {
       value,
