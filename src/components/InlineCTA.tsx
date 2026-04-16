@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { getCheckoutUrl } from "@/lib/constants";
+import { trackAndRedirect } from "@/lib/tracking";
 import { ArrowRight, Zap } from "lucide-react";
 
 const InlineCTA = () => {
@@ -11,7 +11,7 @@ const InlineCTA = () => {
           <span className="text-foreground font-semibold">2,000+ production-ready workflows</span> for one price.
         </p>
         <Button
-          onClick={() => { window.location.href = getCheckoutUrl(); }}
+          onClick={() => trackAndRedirect()}
           size="lg"
           className="bg-gradient-cta hover:opacity-90 text-sm sm:text-base px-8 py-6 font-bold glow-red group"
         >

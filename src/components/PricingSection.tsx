@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { getCheckoutUrl, PRICING } from "@/lib/constants";
+import { PRICING } from "@/lib/constants";
+import { trackAndRedirect } from "@/lib/tracking";
 import { ArrowRight, Check, Gift, Shield, Zap } from "lucide-react";
 
 const inclusions = [
@@ -13,7 +14,7 @@ const inclusions = [
 
 const PricingSection = () => {
   const handleCTA = () => {
-    window.location.href = getCheckoutUrl();
+    trackAndRedirect();
   };
 
   return (

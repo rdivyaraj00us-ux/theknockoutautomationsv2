@@ -1,6 +1,6 @@
 import { Check, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { getCheckoutUrl } from "@/lib/constants";
+import { trackAndRedirect } from "@/lib/tracking";
 
 const categories = [
   { name: "AI & Machine Learning", count: 301, color: "#a855f7" },
@@ -146,9 +146,7 @@ const SolutionSection = () => {
             </div>
 
             <Button
-              onClick={() => {
-                window.location.href = getCheckoutUrl();
-              }}
+              onClick={() => trackAndRedirect()}
               className="bg-gradient-cta hover:opacity-90 font-bold px-8 py-6 text-sm group"
             >
               Get the Full Bundle — $24.99

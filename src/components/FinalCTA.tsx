@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { getCheckoutUrl } from "@/lib/constants";
+import { trackAndRedirect } from "@/lib/tracking";
 import { ArrowRight, Zap, CheckCircle2, Gift } from "lucide-react";
 
 const BUNDLE_ITEMS = [
@@ -11,7 +11,7 @@ const BUNDLE_ITEMS = [
 
 const FinalCTA = () => {
   const handleCTA = () => {
-    window.location.href = getCheckoutUrl();
+    trackAndRedirect();
   };
 
   return (

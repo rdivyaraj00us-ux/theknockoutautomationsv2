@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { getCheckoutUrl } from "@/lib/constants";
+import { trackAndRedirect } from "@/lib/tracking";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -22,7 +22,7 @@ const Navbar = () => {
   ];
 
   const handleCTA = () => {
-    window.location.href = getCheckoutUrl();
+    trackAndRedirect();
   };
 
   return (
