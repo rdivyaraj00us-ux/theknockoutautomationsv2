@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { getCheckoutUrl, PRICING } from "@/lib/constants";
+import { PRICING } from "@/lib/constants";
+import { trackAndRedirect } from "@/lib/tracking";
 import { X, Zap, CheckCircle2 } from "lucide-react";
 
 const BUNDLE_ITEMS = [
@@ -81,7 +82,7 @@ const ExitIntentPopup = () => {
         </div>
 
         <Button
-          onClick={() => { window.location.href = getCheckoutUrl("WAIT10"); }}
+          onClick={() => trackAndRedirect("WAIT10")}
           className="w-full bg-gradient-cta hover:opacity-90 font-bold py-6 text-base animate-pulse-glow"
         >
           <Zap className="h-4 w-4 mr-2" />

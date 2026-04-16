@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { getCheckoutUrl } from "@/lib/constants";
+import { trackAndRedirect } from "@/lib/tracking";
 import { ArrowRight, Shield, Zap, Clock, Download } from "lucide-react";
 
 interface Node {
@@ -164,7 +164,7 @@ const HeroSection = () => {
   useNodeCanvas(canvasRef);
 
   const handleCTA = () => {
-    window.location.href = getCheckoutUrl();
+    trackAndRedirect();
   };
 
   return (

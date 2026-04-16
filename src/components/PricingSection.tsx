@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { getCheckoutUrl, PRICING } from "@/lib/constants";
-import { ArrowRight, Check, Gift, Shield, Zap } from "lucide-react";
+import { PRICING } from "@/lib/constants";
+import { trackAndRedirect } from "@/lib/tracking";
 
 const inclusions = [
   "2,000+ ready-to-use n8n workflows",
@@ -13,7 +13,7 @@ const inclusions = [
 
 const PricingSection = () => {
   const handleCTA = () => {
-    window.location.href = getCheckoutUrl();
+    trackAndRedirect();
   };
 
   return (
