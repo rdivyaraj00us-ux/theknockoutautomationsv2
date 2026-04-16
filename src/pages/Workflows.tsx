@@ -133,7 +133,7 @@ const Workflows = () => {
                 <p className="text-sm font-semibold mb-2">Get All 2,000+</p>
                 <p className="text-xs text-muted-foreground mb-3">Unlock the full library for just $24.99</p>
                 <Button
-                  onClick={() => { window.location.href = getCheckoutUrl(); }}
+                  onClick={() => trackAndRedirect()}
                   size="sm"
                   className="w-full bg-gradient-cta hover:opacity-90 font-bold text-xs"
                 >
