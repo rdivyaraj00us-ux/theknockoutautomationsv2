@@ -1,4 +1,6 @@
-export const SHOPIFY_CHECKOUT_URL = "https://checkout.dodopayments.com/buy/pdt_0NcjrfHtQQbPxzvoM7Iif?quantity=1";
+export const CHECKOUT_URL = "https://checkout.dodopayments.com/buy/pdt_0NcjrfHtQQbPxzvoM7Iif?quantity=1";
+/** @deprecated Use CHECKOUT_URL instead */
+export const SHOPIFY_CHECKOUT_URL = CHECKOUT_URL;
 
 export const PRICING = {
   original: 149,
