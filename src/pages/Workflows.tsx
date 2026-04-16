@@ -3,7 +3,7 @@ import { usePageMeta } from "@/hooks/usePageMeta";
 import { Link } from "react-router-dom";
 import { Search, ArrowLeft, Filter } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { getCheckoutUrl } from "@/lib/constants";
+import { trackAndRedirect } from "@/lib/tracking";
 import workflowData from "@/data/workflows.json";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
