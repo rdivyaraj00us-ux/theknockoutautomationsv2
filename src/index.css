@@ -68,9 +68,19 @@
     overflow-x: hidden;
   }
 
+  /* Fallback font metrics to minimize CLS during font swap */
+  @font-face {
+    font-family: "Inter Fallback";
+    src: local("Arial");
+    size-adjust: 107%;
+    ascent-override: 90%;
+    descent-override: 22%;
+    line-gap-override: 0%;
+  }
+
   body {
     @apply bg-background text-foreground font-sans;
-    font-family: "Inter", system-ui, sans-serif;
+    font-family: "Inter", "Inter Fallback", system-ui, sans-serif;
     overflow-x: hidden;
   }
 
