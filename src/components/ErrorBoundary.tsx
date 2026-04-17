@@ -10,6 +10,15 @@ interface State {
   hasError: boolean;
 }
 
+const SESSION_KEY = "lovable:chunk-reload";
+
+function isChunkLoadError(error: unknown): boolean {
+  const message = error instanceof Error ? error.message : String(error);
+  return /Failed to fetch dynamically imported module|Importing a module script failed|ChunkLoadError|Loading chunk \d+ failed/i.test(
+    message,
+  );
+}
+
 class ErrorBoundary extends Component<Props, State> {
   state: State = { hasError: false };
 
@@ -19,6 +28,21 @@ class ErrorBoundary extends Component<Props, State> {
 
   componentDidCatch(error: Error, info: React.ErrorInfo) {
     console.error("ErrorBoundary caught:", error, info.componentStack);
+
+    // Auto-recover from stale chunk errors after a new deploy by doing a
+    // single hard reload. Guarded by sessionStorage to avoid reload loops.
+    if (isChunkLoadError(error) && typeof window !== "undefined") {
+      let alreadyReloaded = false;
+      try {
+        alreadyReloaded = window.sessionStorage.getItem(SESSION_KEY) === "1";
+        window.sessionStorage.setItem(SESSION_KEY, "1");
+      } catch {
+        /* ignore */
+      }
+      if (!alreadyReloaded) {
+        window.location.reload();
+      }
+    }
   }
 
   render() {
