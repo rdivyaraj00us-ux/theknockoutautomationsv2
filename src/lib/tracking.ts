@@ -48,7 +48,7 @@ export function trackAndRedirect(discountCode?: string): void {
     // Short delay so pixel beacons get queued before navigation
     setTimeout(() => {
       window.location.href = url;
-    }, 150);
+    }, 100);
   };
 
   // Yield to the browser first — paint button feedback, then run trackers
