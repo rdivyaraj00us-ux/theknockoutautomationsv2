@@ -15,36 +15,46 @@ export function trackAndRedirect(discountCode?: string): void {
   const url = getCheckoutUrl(discountCode);
   const value = discountCode === "WAIT10" ? 22.49 : PRICING.sale;
 
-  // Meta Pixel
-  console.log("[Tracking] CTA clicked, fbq available:", typeof window.fbq === "function");
-  if (typeof window.fbq === "function") {
-    window.fbq("track", "InitiateCheckout", {
-      value,
-      currency: "USD",
-      content_name: "The Knockout Automations",
-      content_type: "product",
-      content_ids: ["pdt_0NcjrfHtQQbPxzvoM7Iif"],
-    });
-  }
+  // Defer all tracking + navigation off the click's interaction frame
+  // so the browser can paint feedback immediately (improves INP).
+  const fireAndGo = () => {
+    try {
+      if (typeof window.fbq === "function") {
+        window.fbq("track", "InitiateCheckout", {
+          value,
+          currency: "USD",
+          content_name: "The Knockout Automations",
+          content_type: "product",
+          content_ids: ["pdt_0NcjrfHtQQbPxzvoM7Iif"],
+        });
+      }
+      if (typeof window.gtag === "function") {
+        window.gtag("event", "begin_checkout", {
+          currency: "USD",
+          value,
+          items: [
+            {
+              item_id: "pdt_0NcjrfHtQQbPxzvoM7Iif",
+              item_name: "The Knockout Automations",
+              price: value,
+              quantity: 1,
+            },
+          ],
+        });
+      }
+    } catch {
+      /* never block navigation on tracking errors */
+    }
+    // Short delay so pixel beacons get queued before navigation
+    setTimeout(() => {
+      window.location.href = url;
+    }, 150);
+  };
 
-  // GA4
-  if (typeof window.gtag === "function") {
-    window.gtag("event", "begin_checkout", {
-      currency: "USD",
-      value,
-      items: [
-        {
-          item_id: "pdt_0NcjrfHtQQbPxzvoM7Iif",
-          item_name: "The Knockout Automations",
-          price: value,
-          quantity: 1,
-        },
-      ],
-    });
+  // Yield to the browser first — paint button feedback, then run trackers
+  if (typeof window.requestIdleCallback === "function") {
+    window.requestIdleCallback(fireAndGo, { timeout: 100 });
+  } else {
+    setTimeout(fireAndGo, 0);
   }
-
-  // Wait 300ms for pixels to register before navigating
-  setTimeout(() => {
-    window.location.href = url;
-  }, 300);
 }

@@ -20,10 +20,14 @@ function useNodeCanvas(canvasRef: React.RefObject<HTMLCanvasElement | null>) {
 
   useEffect(() => {
     if (window.innerWidth < 768) return;
+    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    // Delay canvas init by 2s so hero text/CTA render first
+    let cleanupRef: (() => void) | undefined;
+
+    // Delay canvas init by 3s so hero text/CTA render first
     const delayTimer = setTimeout(() => {
       const ctx = canvas.getContext("2d");
       if (!ctx) return;
@@ -58,12 +62,32 @@ function useNodeCanvas(canvasRef: React.RefObject<HTMLCanvasElement | null>) {
         const rect = canvas.getBoundingClientRect();
         mouseRef.current = { x: e.clientX - rect.left, y: e.clientY - rect.top };
       };
-      canvas.addEventListener("mousemove", onMouseMove);
+      canvas.addEventListener("mousemove", onMouseMove, { passive: true });
 
       let running = true;
+      let visible = true;
+
+      // Pause RAF when hero scrolls out of view (huge INP win on long pages)
+      const io = new IntersectionObserver(
+        (entries) => {
+          visible = entries[0]?.isIntersecting ?? false;
+          if (visible && running) draw();
+        },
+        { threshold: 0 },
+      );
+      io.observe(canvas);
+
+      const onVisibility = () => {
+        if (document.hidden) visible = false;
+        else {
+          visible = true;
+          if (running) draw();
+        }
+      };
+      document.addEventListener("visibilitychange", onVisibility);
 
       const draw = () => {
-        if (!running) return;
+        if (!running || !visible) return;
         const W = canvas.offsetWidth;
         const H = canvas.offsetHeight;
         ctx.clearRect(0, 0, W, H);
@@ -147,10 +171,10 @@ function useNodeCanvas(canvasRef: React.RefObject<HTMLCanvasElement | null>) {
         cancelAnimationFrame(frameRef.current);
         window.removeEventListener("resize", resize);
         canvas.removeEventListener("mousemove", onMouseMove);
+        document.removeEventListener("visibilitychange", onVisibility);
+        io.disconnect();
       };
     }, 3000);
-
-    let cleanupRef: (() => void) | undefined;
 
     return () => {
       clearTimeout(delayTimer);
