@@ -60,6 +60,10 @@ export const WORKFLOW_CATEGORIES = [
 
 export const FAQ_DATA = [
   {
+    q: "Do you offer refunds?",
+    a: "Yes! We offer a 30-day no-questions-asked money-back guarantee. If you're not satisfied for any reason, just email us and we'll refund you in full.",
+  },
+  {
     q: "What exactly do I get for $24.99?",
     a: "You get instant access to 2,000+ ready-to-use n8n workflow templates covering 19 categories — from AI & automation to CRM, marketing, e-commerce, and more. Every workflow is a downloadable JSON file you can import directly into n8n.",
   },
@@ -94,10 +98,6 @@ export const FAQ_DATA = [
   {
     q: "Why is it so cheap? What's the catch?",
     a: "No catch. We're a registered company (TKOA Private Limited) offering launch pricing to build our reputation. This is a limited-time investment in our customer base — the price will increase.",
-  },
-  {
-    q: "Do you offer refunds?",
-    a: "Yes! We offer a 30-day no-questions-asked money-back guarantee. If you're not satisfied for any reason, just email us and we'll refund you in full.",
   },
   {
     q: "Does this work with OpenClaw?",

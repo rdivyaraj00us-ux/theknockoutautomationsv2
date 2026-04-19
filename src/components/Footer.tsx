@@ -47,6 +47,9 @@ const Footer = () => (
         <div className="flex flex-col sm:flex-row items-center justify-between w-full gap-4">
           <p>© {new Date().getFullYear()} {BRAND.name}. All rights reserved.</p>
         </div>
+        <p className="text-center">
+          <span className="text-foreground/80 font-semibold">TKOA Private Limited</span> · Registered Company · CIN: {BRAND.cin}
+        </p>
         <p className="text-center text-muted-foreground/70">
           n8n® is a registered trademark of n8n GmbH. {BRAND.name} is not affiliated with n8n GmbH.
         </p>
