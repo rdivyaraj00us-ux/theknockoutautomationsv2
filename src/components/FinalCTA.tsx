@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { trackAndRedirect } from "@/lib/tracking";
 import { ArrowRight, Zap, CheckCircle2, Gift } from "lucide-react";
+import TrustRow from "@/components/TrustRow";
 
 const BUNDLE_ITEMS = [
   "2,000+ n8n Workflow Templates — Ready to import & customize",
@@ -50,7 +51,11 @@ const FinalCTA = () => {
             Get Instant Access — $24.99
             <ArrowRight className="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1" />
           </Button>
-          <p className="text-muted-foreground text-xs mt-6 italic">
+          <TrustRow className="mt-6" />
+          <p className="text-[10px] sm:text-xs text-muted-foreground/80 mt-2">
+            Secure checkout powered by Dodo Payments · PCI DSS Compliant
+          </p>
+          <p className="text-muted-foreground text-xs mt-4 italic">
             100% risk-free. 30-day money-back guarantee, no questions asked.
           </p>
         </div>

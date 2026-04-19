@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { trackAndRedirect } from "@/lib/tracking";
 import { ArrowRight, Shield, Zap, Clock, Download } from "lucide-react";
+import TrustRow from "@/components/TrustRow";
 
 interface Node {
   x: number;
@@ -242,12 +243,10 @@ const HeroSection = () => {
             <ArrowRight className="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1" />
           </Button>
 
-          <div className="flex items-center gap-4 sm:gap-6 text-[11px] sm:text-xs text-muted-foreground flex-wrap justify-center">
-            <span>✓ Instant Download</span>
-            <span>✓ One-Time Payment</span>
-            <span>✓ 30-Day Money Back</span>
-            <span>✓ 2,000+ Workflows</span>
-          </div>
+          <TrustRow />
+          <p className="text-[10px] sm:text-xs text-muted-foreground/80 mt-1">
+            Secure checkout powered by Dodo Payments · PCI DSS Compliant
+          </p>
         </div>
 
         <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-sm font-semibold text-primary bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 mb-5 sm:mb-8">

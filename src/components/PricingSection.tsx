@@ -113,7 +113,18 @@ const PricingSection = () => {
               </span>
               <span>🔒 Secure Checkout</span>
             </div>
+            <p className="text-[11px] text-[hsl(var(--muted-foreground))]/80 mt-3">
+              Secure checkout powered by Dodo Payments · PCI DSS Compliant
+            </p>
           </div>
+        </div>
+
+        {/* Registered business badge */}
+        <div className="mt-8 reveal reveal-delay-2 inline-flex items-center gap-2 text-[11px] sm:text-xs text-muted-foreground bg-card/60 border border-border rounded-full px-4 py-2">
+          <Shield className="h-3.5 w-3.5 text-[hsl(var(--success))]" />
+          <span>
+            <span className="text-foreground font-semibold">TKOA Private Limited</span> · Registered Company · CIN: U58199GJ2025PTC169791
+          </span>
         </div>
 
         <p className="text-[hsl(var(--muted-foreground))] text-sm mt-8 reveal reveal-delay-2">
