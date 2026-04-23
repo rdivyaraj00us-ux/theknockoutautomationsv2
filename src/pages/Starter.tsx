@@ -22,7 +22,6 @@ import {
   CreditCard,
   BadgeCheck,
 } from "lucide-react";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import LogoMarquee from "@/components/LogoMarquee";
 
@@ -116,7 +115,15 @@ const Starter = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      <Navbar />
+      <nav className="sticky top-0 z-40 bg-background/95 backdrop-blur-md border-b border-border">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center">
+          <Link to="/starter" className="flex items-center gap-2 text-foreground font-bold text-lg">
+            <Zap className="h-6 w-6 text-primary" />
+            <span className="sm:hidden">KO Automations</span>
+            <span className="hidden sm:inline">The Knockout Automations</span>
+          </Link>
+        </div>
+      </nav>
 
       {/* ═══ HERO ═══ */}
       <section className="relative min-h-[100svh] flex items-center justify-center pt-8 pb-12 sm:pb-20 px-4 overflow-hidden">
