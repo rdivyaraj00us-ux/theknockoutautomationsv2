@@ -60,7 +60,7 @@ const WORKFLOW_CARDS = [
 ];
 
 const STARTER_INCLUSIONS = [
-  "900 hand-picked n8n workflow templates",
+  "900+ hand-picked n8n workflow templates",
   "Covers 19 categories, 60+ integrations",
   "Instant download — JSON files ready to import",
   "Lifetime access · No subscriptions",
@@ -86,18 +86,18 @@ const STARTER_FAQS = [
   },
   {
     q: "Is it really a one-time payment?",
-    a: "Yes. Pay $9.99 once and own all 900 workflows forever. No recurring charges, no upsell spam, no hidden fees.",
+    a: "Yes. Pay $9.99 once and own all 900+ workflows forever. No recurring charges, no upsell spam, no hidden fees.",
   },
   {
     q: "What's the difference vs the $24.99 Complete Library?",
-    a: "Starter ($9.99) gets you 900 of the most-requested workflows. Complete ($24.99) unlocks all 2,000+ workflows plus the OpenClaw Integration Guide, the Master Prompt Engineering Guidebook, and priority support.",
+    a: "Starter ($9.99) gets you 900+ of the most-requested workflows. Complete ($24.99) unlocks all 2,000+ workflows plus the OpenClaw Integration Guide, the Master Prompt Engineering Guidebook, and priority support.",
   },
 ];
 
 const Starter = () => {
   usePageMeta(
-    "900 n8n Workflows for $9.99 — Starter Pack | The Knockout Automations",
-    "Get 900 hand-picked n8n workflow templates for $9.99. Lifetime access. Import and run in 30 seconds. 30-day money-back guarantee.",
+    "900+ n8n Workflows for $9.99 — Starter Pack | The Knockout Automations",
+    "Get 900+ hand-picked n8n workflow templates for $9.99. Lifetime access. Import and run in 30 seconds. 30-day money-back guarantee.",
   );
   useScrollReveal();
 
@@ -158,7 +158,7 @@ const Starter = () => {
 
           <h1 className="reveal reveal-delay-1 text-[2.5rem] sm:text-6xl md:text-7xl lg:text-[5.2rem] font-black leading-[1.05] tracking-tight mb-5 sm:mb-7">
             <span className="block">
-              <span className="text-gradient">900</span> n8n Workflows.
+              <span className="text-gradient">900+</span> n8n Workflows.
             </span>
             <span className="block mt-1">
               <span className="text-[hsl(var(--gold))]">$9.99.</span>{" "}
@@ -168,7 +168,7 @@ const Starter = () => {
 
           <p className="reveal reveal-delay-2 text-sm sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
             Stop staring at a blank canvas. The{" "}
-            <span className="text-foreground font-semibold">900 most-requested automations</span>, hand-picked by working n8n builders — ready to import and run in 30 seconds.
+            <span className="text-foreground font-semibold">900+ most-requested automations</span>, hand-picked by working n8n builders — ready to import and run in 30 seconds.
           </p>
 
           <div className="reveal reveal-delay-3 flex flex-col items-center gap-3 mb-6 sm:mb-8">
@@ -178,7 +178,7 @@ const Starter = () => {
               className="bg-gradient-cta hover:opacity-90 text-base sm:text-lg px-10 py-7 font-bold glow-red animate-pulse-glow group cta-btn"
             >
               <Zap className="h-5 w-5 mr-2" />
-              Get 900 Workflows — $9.99
+              Get 900+ Workflows — $9.99
               <ArrowRight className="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1" />
             </Button>
 
@@ -196,7 +196,7 @@ const Starter = () => {
 
           <div className="hidden sm:flex items-center justify-center gap-3 mt-8 flex-wrap reveal reveal-delay-4">
             {[
-              { num: "900", label: "Workflows" },
+              { num: "900+", label: "Workflows" },
               { num: "60+", label: "Integrations" },
               { num: "19", label: "Categories" },
             ].map((p) => (
@@ -324,7 +324,7 @@ const Starter = () => {
           <div className="max-w-xl mx-auto">
             <div className="reveal reveal-delay-1 card-hover rounded-2xl border border-border bg-card p-6">
               <FileJson className="h-8 w-8 text-primary mb-4" />
-              <h3 className="font-bold text-base mb-2">900 .json workflow files</h3>
+              <h3 className="font-bold text-base mb-2">900+ .json workflow files</h3>
               <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                 Native n8n format. Open n8n → Import from File → done. No conversion, no plugins.
               </p>
@@ -456,7 +456,7 @@ const Starter = () => {
               </div>
               <ul className="space-y-2.5 text-sm mb-6">
                 {[
-                  "900 hand-picked workflows",
+                  "900+ hand-picked workflows",
                   "19 categories, 60+ integrations",
                   "Lifetime access",
                   "Full commercial rights",
@@ -589,7 +589,7 @@ const Starter = () => {
       <section className="py-24 sm:py-32 px-4 bg-gradient-section">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-black mb-5 reveal">
-            Grab the 900 workflows for{" "}
+            Grab the 900+ workflows for{" "}
             <span className="text-[hsl(var(--gold))]">$9.99</span>.
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg mb-10 reveal reveal-delay-1">
@@ -623,7 +623,7 @@ const Starter = () => {
           onClick={buy}
           className="w-full bg-gradient-cta hover:opacity-90 text-sm font-bold py-6 cta-btn"
         >
-          <Zap className="h-4 w-4 mr-2" /> Get 900 Workflows — $9.99
+          <Zap className="h-4 w-4 mr-2" /> Get 900+ Workflows — $9.99
           <ArrowRight className="h-4 w-4 ml-2" />
         </Button>
       </div>

@@ -5,7 +5,7 @@ export const SHOPIFY_CHECKOUT_URL = CHECKOUT_URL;
 
 export const STARTER_PRICING = {
   price: 9.99,
-  workflows: "900",
+  workflows: "900+",
 };
 
 export const PRICING = {
