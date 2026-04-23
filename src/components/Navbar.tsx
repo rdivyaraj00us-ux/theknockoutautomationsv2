@@ -71,6 +71,9 @@ const Navbar = () => {
           <button
             className="md:hidden text-foreground"
             onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-nav"
           >
             {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -78,7 +81,7 @@ const Navbar = () => {
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden bg-background/98 backdrop-blur-md border-t border-border">
+        <div id="mobile-nav" className="md:hidden bg-background/98 backdrop-blur-md border-t border-border">
           <div className="px-4 py-4 space-y-3">
             {navLinks.map((link) =>
               link.href.includes("#") ? (
