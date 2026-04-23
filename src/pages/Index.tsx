@@ -21,6 +21,7 @@ const IndustryCards = lazyWithRetry(() => import("@/components/IndustryCards"));
 const WorkflowExplorerPreview = lazyWithRetry(() => import("@/components/WorkflowExplorerPreview"));
 const ComparisonTable = lazyWithRetry(() => import("@/components/ComparisonTable"));
 const FAQSection = lazyWithRetry(() => import("@/components/FAQSection"));
+const TestimonialsSection = lazyWithRetry(() => import("@/components/TestimonialsSection"));
 const FinalCTA = lazyWithRetry(() => import("@/components/FinalCTA"));
 const Footer = lazyWithRetry(() => import("@/components/Footer"));
 const MobileStickyBar = lazyWithRetry(() => import("@/components/MobileStickyBar"));
@@ -100,6 +101,9 @@ const Index = () => {
       {/* ═══ CLOSING FLOW ═══ */}
       <Suspense fallback={<LazyFallback />}>
         <FAQSection />
+      </Suspense>
+      <Suspense fallback={<LazyFallback />}>
+        <TestimonialsSection />
       </Suspense>
       <Suspense fallback={<LazyFallback />}>
         <FinalCTA />
