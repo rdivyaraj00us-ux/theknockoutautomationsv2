@@ -7,6 +7,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import { lazyWithRetry } from "@/lib/lazyWithRetry";
 import Index from "./pages/Index.tsx";
+import Starter from "./pages/Starter.tsx";
 import Docs from "./pages/Docs.tsx";
 import Contact from "./pages/Contact.tsx";
 import RefundPolicy from "./pages/RefundPolicy.tsx";
@@ -27,6 +28,7 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/starter" element={<Starter />} />
             <Route path="/workflows" element={<Suspense fallback={<div className="min-h-screen flex items-center justify-center text-muted-foreground">Loading…</div>}><Workflows /></Suspense>} />
             <Route path="/docs" element={<Docs />} />
             <Route path="/contact" element={<Contact />} />
