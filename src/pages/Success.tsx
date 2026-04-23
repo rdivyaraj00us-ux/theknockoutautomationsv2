@@ -21,7 +21,7 @@ const Success = () => {
         title="Thank you for your purchase | The Knockout Automations"
         description="Your purchase is confirmed. Your download link has been sent to your email."
         canonical="https://theknockoutautomations.com/success"
-        noIndex
+        robots="noindex, nofollow"
       />
 
       <div className="max-w-lg w-full text-center">
