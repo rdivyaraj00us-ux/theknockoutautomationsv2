@@ -302,6 +302,72 @@ const Starter = () => {
         </div>
       </section>
 
+      {/* ═══ EXACTLY WHAT YOU GET — delivery proof ═══ */}
+      <section className="py-20 sm:py-24 px-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3 reveal">Delivery</p>
+            <h2 className="text-3xl sm:text-4xl font-black mb-4 reveal reveal-delay-1">
+              Exactly what lands in your <span className="text-primary">inbox</span>.
+            </h2>
+            <p className="text-muted-foreground text-base sm:text-lg reveal reveal-delay-2">
+              No course portal. No waiting. No "check back next week." Real files, delivered in under a minute.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {[
+              {
+                icon: FileJson,
+                title: "900 .json workflow files",
+                desc: "Native n8n format. Open n8n → Import from File → done. No conversion, no plugins.",
+                meta: "~14 MB · ZIP archive",
+              },
+              {
+                icon: FolderTree,
+                title: "Sorted into 19 folders",
+                desc: "Organised by category — Sales, AI, E-commerce, DevOps, Marketing, Support and more — so you find what you need in seconds.",
+                meta: "Searchable filenames",
+              },
+              {
+                icon: PlayCircle,
+                title: "Setup video for every workflow",
+                desc: "Short loom-style walkthrough showing the API keys, triggers and one-click test for each automation.",
+                meta: "Streamed · no download needed",
+              },
+            ].map((item, i) => (
+              <div
+                key={item.title}
+                className={`reveal reveal-delay-${i + 1} card-hover rounded-2xl border border-border bg-card p-6`}
+              >
+                <item.icon className="h-8 w-8 text-primary mb-4" />
+                <h3 className="font-bold text-base mb-2">{item.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{item.desc}</p>
+                <p className="text-[11px] font-mono text-[hsl(var(--gold))] uppercase tracking-wider">{item.meta}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 reveal reveal-delay-2 rounded-xl border border-border bg-card/40 p-5 sm:p-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center text-sm">
+              {[
+                { step: "1", label: "Pay $9.99", sub: "Apple Pay · Google Pay · Card · UPI" },
+                { step: "2", label: "Email arrives", sub: "Within 60 seconds, from support@" },
+                { step: "3", label: "Import & run", sub: "First workflow live in 30 seconds" },
+              ].map((s) => (
+                <div key={s.step} className="flex flex-col items-center gap-1">
+                  <span className="h-7 w-7 rounded-full bg-primary/10 border border-primary/30 text-primary text-xs font-black flex items-center justify-center">
+                    {s.step}
+                  </span>
+                  <p className="font-semibold text-foreground">{s.label}</p>
+                  <p className="text-xs text-muted-foreground">{s.sub}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ═══ PRICING — animated border, matching main site ═══ */}
       <section id="pricing" className="py-24 sm:py-32 px-4">
         <div className="max-w-3xl mx-auto text-center">
