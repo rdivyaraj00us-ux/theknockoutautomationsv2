@@ -71,7 +71,7 @@ const STARTER_INCLUSIONS = [
 const STARTER_FAQS = [
   {
     q: "What if they don't work for me?",
-    a: "30-day money-back guarantee. Email support@theknockoutautomations.com, get a full refund. No forms, no questions, no friction.",
+    a: "30-day money-back guarantee. Email theknockoutacademy@gmail.com, get a full refund. No forms, no questions, no friction.",
   },
   {
     q: "Is this compatible with my n8n version?",
@@ -329,7 +329,7 @@ const Starter = () => {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center text-sm">
               {[
                 { step: "1", label: "Pay $9.99", sub: "Apple Pay · Google Pay · Card · UPI" },
-                { step: "2", label: "Email arrives", sub: "Within 60 seconds, from support@" },
+                { step: "2", label: "Email arrives", sub: "Within 60 seconds, with your download link" },
                 { step: "3", label: "Import & run", sub: "First workflow live in 30 seconds" },
               ].map((s) => (
                 <div key={s.step} className="flex flex-col items-center gap-1">
@@ -520,11 +520,11 @@ const Starter = () => {
               <span className="text-foreground font-semibold">free upgrade to the Complete Library</span> ($24.99 value) and their quote featured here.
             </p>
             <a
-              href="mailto:support@theknockoutautomations.com?subject=Starter%20Pack%20Review"
+              href="mailto:theknockoutacademy@gmail.com?subject=Starter%20Pack%20Review"
               className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
             >
               <Mail className="h-4 w-4" />
-              support@theknockoutautomations.com
+              theknockoutacademy@gmail.com
             </a>
           </div>
         </div>
