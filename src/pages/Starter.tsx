@@ -26,6 +26,7 @@ import {
 } from "lucide-react";
 import Footer from "@/components/Footer";
 import LogoMarquee from "@/components/LogoMarquee";
+import TestimonialsSection from "@/components/TestimonialsSection";
 
 const WORKFLOW_CARDS = [
   {
@@ -454,6 +455,9 @@ const Starter = () => {
           </div>
         </div>
       </section>
+
+      {/* ═══ TESTIMONIALS ═══ */}
+      <TestimonialsSection />
 
       {/* ═══ STARTER vs COMPLETE ═══ */}
       <section className="py-20 sm:py-28 px-4 bg-gradient-section">
