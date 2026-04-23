@@ -205,15 +205,43 @@ const Starter = () => {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
       </section>
 
-      {/* ═══ TRUST STRIP ═══ */}
-      <section className="px-4 py-6 border-y border-border bg-card/30">
-        <div className="max-w-3xl mx-auto text-center reveal">
-          <p className="text-xs sm:text-sm text-muted-foreground inline-flex items-center gap-2 flex-wrap justify-center">
-            <Shield className="h-3.5 w-3.5 text-[hsl(var(--success))]" />
-            Built by <span className="text-foreground font-semibold">TKOA Private Limited</span> · Registered Indian Company · CIN U58199GJ2025PTC169791
-          </p>
+      {/* ═══ TRUST BAND — security, company, payments ═══ */}
+      <section className="px-4 py-8 border-y border-border bg-card/30">
+        <div className="max-w-5xl mx-auto reveal">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
+            {[
+              { icon: BadgeCheck, label: "Registered Company", sub: "TKOA Pvt Ltd · CIN U58199GJ2025PTC169791" },
+              { icon: Lock, label: "256-bit SSL Checkout", sub: "PCI DSS Compliant · Dodo Payments" },
+              { icon: Shield, label: "30-Day Refund", sub: "No questions, no forms" },
+              { icon: Download, label: "Instant Delivery", sub: "Email link in < 60 seconds" },
+            ].map((b) => (
+              <div key={b.label} className="flex flex-col items-center gap-1.5 px-2">
+                <b.icon className="h-5 w-5 text-[hsl(var(--success))]" />
+                <p className="text-xs sm:text-sm font-bold text-foreground leading-tight">{b.label}</p>
+                <p className="text-[10px] sm:text-[11px] text-muted-foreground leading-snug">{b.sub}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-6 pt-5 border-t border-border/60 flex items-center justify-center gap-2 sm:gap-3 flex-wrap">
+            <span className="text-[10px] sm:text-xs uppercase tracking-widest text-muted-foreground font-semibold mr-1">
+              We accept
+            </span>
+            {["Visa", "Mastercard", "Amex", "Apple Pay", "Google Pay", "UPI"].map((m) => (
+              <span
+                key={m}
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-border bg-card text-[10px] sm:text-xs font-mono font-semibold text-muted-foreground"
+              >
+                <CreditCard className="h-3 w-3" />
+                {m}
+              </span>
+            ))}
+          </div>
         </div>
       </section>
+
+      {/* ═══ INTEGRATIONS — real tool names = real product ═══ */}
+      <LogoMarquee />
 
       {/* ═══ THE PROBLEM ═══ */}
       <section className="py-20 sm:py-28 px-4">
