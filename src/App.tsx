@@ -1,4 +1,4 @@
-import { Suspense, lazy } from "react";
+import { Suspense } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
@@ -7,6 +7,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import { lazyWithRetry } from "@/lib/lazyWithRetry";
+import ClarityLoader from "@/components/ClarityLoader";
+import RouteAnalytics from "@/hooks/useAnalytics";
 
 // Lazy-load every route so each page only ships its own JS.
 const Index = lazyWithRetry(() => import("./pages/Index.tsx"));
@@ -17,6 +19,7 @@ const Contact = lazyWithRetry(() => import("./pages/Contact.tsx"));
 const RefundPolicy = lazyWithRetry(() => import("./pages/RefundPolicy.tsx"));
 const Privacy = lazyWithRetry(() => import("./pages/Privacy.tsx"));
 const Terms = lazyWithRetry(() => import("./pages/Terms.tsx"));
+const Success = lazyWithRetry(() => import("./pages/Success.tsx"));
 const NotFound = lazyWithRetry(() => import("./pages/NotFound.tsx"));
 
 const queryClient = new QueryClient();
@@ -35,6 +38,10 @@ const App = () => (
           <Toaster />
           <Sonner />
           <BrowserRouter>
+            {/* Per-route Clarity project loader (mounted before page_view tracking) */}
+            <ClarityLoader />
+            {/* GA4 + Meta Pixel page_view on every route change */}
+            <RouteAnalytics />
             <Suspense fallback={<PageFallback />}>
               <Routes>
                 <Route path="/" element={<Index />} />
@@ -45,6 +52,7 @@ const App = () => (
                 <Route path="/refund-policy" element={<RefundPolicy />} />
                 <Route path="/privacy" element={<Privacy />} />
                 <Route path="/terms" element={<Terms />} />
+                <Route path="/success" element={<Success />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>

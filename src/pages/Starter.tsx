@@ -6,6 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { trackAndRedirectStarter } from "@/lib/trackingStarter";
+import { trackViewContent } from "@/lib/tracking";
 import {
   ArrowRight,
   Check,
@@ -103,6 +104,10 @@ const Starter = () => {
   useScrollReveal();
 
   const [showSticky, setShowSticky] = useState(false);
+
+  useEffect(() => {
+    trackViewContent(window.location.pathname);
+  }, []);
 
   useEffect(() => {
     const onScroll = () => {
