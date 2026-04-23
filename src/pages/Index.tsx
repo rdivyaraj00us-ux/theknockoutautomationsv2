@@ -1,5 +1,6 @@
 import { useEffect, Suspense } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { trackViewContent } from "@/lib/tracking";
 import { lazyWithRetry } from "@/lib/lazyWithRetry";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Navbar from "@/components/Navbar";
@@ -30,6 +31,10 @@ const LazyFallback = () => <div className="min-h-[200px]" />;
 
 const Index = () => {
   useScrollReveal();
+
+  useEffect(() => {
+    trackViewContent(window.location.pathname);
+  }, []);
 
   useEffect(() => {
     const hash = window.location.hash;
