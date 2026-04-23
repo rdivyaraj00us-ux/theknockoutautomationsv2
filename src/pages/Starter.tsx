@@ -5,9 +5,26 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { trackAndRedirectStarter } from "@/lib/trackingStarter";
-import { ArrowRight, Check, Shield, Zap, Download, Clock, Gift, Sparkles, Mail } from "lucide-react";
+import {
+  ArrowRight,
+  Check,
+  Shield,
+  Zap,
+  Download,
+  Clock,
+  Gift,
+  Sparkles,
+  Mail,
+  Lock,
+  FileJson,
+  PlayCircle,
+  FolderTree,
+  CreditCard,
+  BadgeCheck,
+} from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import LogoMarquee from "@/components/LogoMarquee";
 
 const WORKFLOW_CARDS = [
   {
