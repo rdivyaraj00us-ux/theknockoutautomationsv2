@@ -64,7 +64,6 @@ const STARTER_INCLUSIONS = [
   "900 hand-picked n8n workflow templates",
   "Covers 19 categories, 60+ integrations",
   "Instant download — JSON files ready to import",
-  "Setup video for every workflow",
   "Lifetime access · No subscriptions",
   "30-day money-back guarantee",
 ];
@@ -315,7 +314,7 @@ const Starter = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {[
               {
                 icon: FileJson,
@@ -328,12 +327,6 @@ const Starter = () => {
                 title: "Sorted into 19 folders",
                 desc: "Organised by category — Sales, AI, E-commerce, DevOps, Marketing, Support and more — so you find what you need in seconds.",
                 meta: "Searchable filenames",
-              },
-              {
-                icon: PlayCircle,
-                title: "Setup video for every workflow",
-                desc: "Short loom-style walkthrough showing the API keys, triggers and one-click test for each automation.",
-                meta: "Streamed · no download needed",
               },
             ].map((item, i) => (
               <div
