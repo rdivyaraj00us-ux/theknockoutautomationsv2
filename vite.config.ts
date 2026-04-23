@@ -18,4 +18,24 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    target: "es2020",
+    cssCodeSplit: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          "react-vendor": ["react", "react-dom", "react-router-dom"],
+          "ui-vendor": ["@radix-ui/react-accordion", "@radix-ui/react-dialog", "@radix-ui/react-tooltip"],
+        },
+      },
+    },
+  },
+  esbuild: {
+    target: "es2020",
+  },
+  optimizeDeps: {
+    esbuildOptions: {
+      target: "es2020",
+    },
+  },
 }));
