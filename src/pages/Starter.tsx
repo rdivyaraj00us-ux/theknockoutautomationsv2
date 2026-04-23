@@ -83,7 +83,7 @@ const STARTER_FAQS = [
   },
   {
     q: "What if I don't know n8n?",
-    a: "Each workflow is plug-and-play. Import the JSON, paste your API credentials, hit run. No coding required — and every workflow ships with a setup video.",
+    a: "Each workflow is plug-and-play. Import the JSON, paste your API credentials, hit run. No coding required.",
   },
   {
     q: "Is it really a one-time payment?",
@@ -268,7 +268,7 @@ const Starter = () => {
               Real workflows. <span className="text-[hsl(var(--gold))]">Not mockups.</span>
             </h2>
             <p className="text-muted-foreground text-base sm:text-lg reveal reveal-delay-2">
-              Import the JSON, paste your credentials, hit run. Every workflow ships with a setup video.
+              Import the JSON, paste your credentials, hit run. Ready for immediate use.
             </p>
           </div>
 
@@ -452,7 +452,7 @@ const Starter = () => {
                   "900 hand-picked workflows",
                   "19 categories, 60+ integrations",
                   "Lifetime access",
-                  "Setup video per workflow",
+                  "Full commercial rights",
                   "Email support",
                   "30-day refund",
                 ].map((f) => (
