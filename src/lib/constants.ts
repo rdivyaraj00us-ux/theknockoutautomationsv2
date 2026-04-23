@@ -1,6 +1,12 @@
 export const CHECKOUT_URL = "https://checkout.dodopayments.com/buy/pdt_0NcjrfHtQQbPxzvoM7Iif?quantity=1";
+export const STARTER_CHECKOUT_URL = "https://dodo.pe/xn6g9amy2fq";
 /** @deprecated Use CHECKOUT_URL instead */
 export const SHOPIFY_CHECKOUT_URL = CHECKOUT_URL;
+
+export const STARTER_PRICING = {
+  price: 9.99,
+  workflows: "900",
+};
 
 export const PRICING = {
   original: 149,
