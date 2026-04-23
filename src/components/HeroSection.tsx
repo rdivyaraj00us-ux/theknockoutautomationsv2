@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { trackAndRedirect } from "@/lib/tracking";
 import { ArrowRight, Shield, Zap, Clock, Download } from "lucide-react";
 import TrustRow from "@/components/TrustRow";
+import MicroProofBar from "@/components/MicroProofBar";
 
 interface Node {
   x: number;
@@ -230,6 +231,15 @@ const HeroSection = () => {
             <span className="text-muted-foreground text-[0.6em] font-bold">Import & Run in 2 Minutes.</span>
           </span>
         </h1>
+
+        {/* Above-the-fold micro-proof bar — single highest-ROI trust signal */}
+        <div className="mb-5">
+          <MicroProofBar
+            quote="Saved me 40 hours in the first week. This is infrastructure, not content."
+            attribution="Michael R. — Ecom Operator"
+            ratingLabel="Rated 5.0 by n8n builders"
+          />
+        </div>
 
         {/* CTA moved directly under headline for mobile visibility */}
         <div className="flex flex-col items-center gap-3 mb-6 sm:mb-8">

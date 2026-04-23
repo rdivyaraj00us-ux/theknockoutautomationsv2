@@ -27,6 +27,8 @@ import {
 import Footer from "@/components/Footer";
 import LogoMarquee from "@/components/LogoMarquee";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import MicroProofBar from "@/components/MicroProofBar";
+import PreCtaTestimonial from "@/components/PreCtaTestimonial";
 
 const WORKFLOW_CARDS = [
   {
@@ -192,10 +194,20 @@ const Starter = () => {
             </span>
           </h1>
 
-          <p className="reveal reveal-delay-2 text-sm sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
+          <p className="reveal reveal-delay-2 text-sm sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-6 leading-relaxed">
             Stop staring at a blank canvas. The{" "}
             <span className="text-foreground font-semibold">900+ most-requested automations</span>, hand-picked by working n8n builders — ready to import and run in 30 seconds.
           </p>
+
+          {/* Above-the-fold micro-proof — every visitor sees this */}
+          <div className="reveal reveal-delay-2 mb-6">
+            <MicroProofBar />
+          </div>
+
+          {/* Pre-CTA testimonial — last thing before the buy button */}
+          <div className="reveal reveal-delay-3 mb-5">
+            <PreCtaTestimonial />
+          </div>
 
           <div className="reveal reveal-delay-3 flex flex-col items-center gap-3 mb-6 sm:mb-8">
             <Button
