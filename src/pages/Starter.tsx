@@ -314,31 +314,15 @@ const Starter = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {[
-              {
-                icon: FileJson,
-                title: "900 .json workflow files",
-                desc: "Native n8n format. Open n8n → Import from File → done. No conversion, no plugins.",
-                meta: "~14 MB · ZIP archive",
-              },
-              {
-                icon: FolderTree,
-                title: "Sorted into 19 folders",
-                desc: "Organised by category — Sales, AI, E-commerce, DevOps, Marketing, Support and more — so you find what you need in seconds.",
-                meta: "Searchable filenames",
-              },
-            ].map((item, i) => (
-              <div
-                key={item.title}
-                className={`reveal reveal-delay-${i + 1} card-hover rounded-2xl border border-border bg-card p-6`}
-              >
-                <item.icon className="h-8 w-8 text-primary mb-4" />
-                <h3 className="font-bold text-base mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{item.desc}</p>
-                <p className="text-[11px] font-mono text-[hsl(var(--gold))] uppercase tracking-wider">{item.meta}</p>
-              </div>
-            ))}
+          <div className="max-w-xl mx-auto">
+            <div className="reveal reveal-delay-1 card-hover rounded-2xl border border-border bg-card p-6">
+              <FileJson className="h-8 w-8 text-primary mb-4" />
+              <h3 className="font-bold text-base mb-2">900 .json workflow files</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                Native n8n format. Open n8n → Import from File → done. No conversion, no plugins.
+              </p>
+              <p className="text-[11px] font-mono text-[hsl(var(--gold))] uppercase tracking-wider">~14 MB · ZIP archive</p>
+            </div>
           </div>
 
           <div className="mt-10 reveal reveal-delay-2 rounded-xl border border-border bg-card/40 p-5 sm:p-6">
