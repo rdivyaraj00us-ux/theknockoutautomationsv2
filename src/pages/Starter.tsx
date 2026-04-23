@@ -5,9 +5,26 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { trackAndRedirectStarter } from "@/lib/trackingStarter";
-import { ArrowRight, Check, Shield, Zap, Download, Clock, Gift, Sparkles, Mail } from "lucide-react";
+import {
+  ArrowRight,
+  Check,
+  Shield,
+  Zap,
+  Download,
+  Clock,
+  Gift,
+  Sparkles,
+  Mail,
+  Lock,
+  FileJson,
+  PlayCircle,
+  FolderTree,
+  CreditCard,
+  BadgeCheck,
+} from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import LogoMarquee from "@/components/LogoMarquee";
 
 const WORKFLOW_CARDS = [
   {
@@ -188,15 +205,43 @@ const Starter = () => {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
       </section>
 
-      {/* ═══ TRUST STRIP ═══ */}
-      <section className="px-4 py-6 border-y border-border bg-card/30">
-        <div className="max-w-3xl mx-auto text-center reveal">
-          <p className="text-xs sm:text-sm text-muted-foreground inline-flex items-center gap-2 flex-wrap justify-center">
-            <Shield className="h-3.5 w-3.5 text-[hsl(var(--success))]" />
-            Built by <span className="text-foreground font-semibold">TKOA Private Limited</span> · Registered Indian Company · CIN U58199GJ2025PTC169791
-          </p>
+      {/* ═══ TRUST BAND — security, company, payments ═══ */}
+      <section className="px-4 py-8 border-y border-border bg-card/30">
+        <div className="max-w-5xl mx-auto reveal">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
+            {[
+              { icon: BadgeCheck, label: "Registered Company", sub: "TKOA Pvt Ltd · CIN U58199GJ2025PTC169791" },
+              { icon: Lock, label: "256-bit SSL Checkout", sub: "PCI DSS Compliant · Dodo Payments" },
+              { icon: Shield, label: "30-Day Refund", sub: "No questions, no forms" },
+              { icon: Download, label: "Instant Delivery", sub: "Email link in < 60 seconds" },
+            ].map((b) => (
+              <div key={b.label} className="flex flex-col items-center gap-1.5 px-2">
+                <b.icon className="h-5 w-5 text-[hsl(var(--success))]" />
+                <p className="text-xs sm:text-sm font-bold text-foreground leading-tight">{b.label}</p>
+                <p className="text-[10px] sm:text-[11px] text-muted-foreground leading-snug">{b.sub}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-6 pt-5 border-t border-border/60 flex items-center justify-center gap-2 sm:gap-3 flex-wrap">
+            <span className="text-[10px] sm:text-xs uppercase tracking-widest text-muted-foreground font-semibold mr-1">
+              We accept
+            </span>
+            {["Visa", "Mastercard", "Amex", "Apple Pay", "Google Pay", "UPI"].map((m) => (
+              <span
+                key={m}
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-border bg-card text-[10px] sm:text-xs font-mono font-semibold text-muted-foreground"
+              >
+                <CreditCard className="h-3 w-3" />
+                {m}
+              </span>
+            ))}
+          </div>
         </div>
       </section>
+
+      {/* ═══ INTEGRATIONS — real tool names = real product ═══ */}
+      <LogoMarquee />
 
       {/* ═══ THE PROBLEM ═══ */}
       <section className="py-20 sm:py-28 px-4">
@@ -253,6 +298,72 @@ const Starter = () => {
                 <p className="text-sm text-muted-foreground leading-relaxed">{w.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ EXACTLY WHAT YOU GET — delivery proof ═══ */}
+      <section className="py-20 sm:py-24 px-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3 reveal">Delivery</p>
+            <h2 className="text-3xl sm:text-4xl font-black mb-4 reveal reveal-delay-1">
+              Exactly what lands in your <span className="text-primary">inbox</span>.
+            </h2>
+            <p className="text-muted-foreground text-base sm:text-lg reveal reveal-delay-2">
+              No course portal. No waiting. No "check back next week." Real files, delivered in under a minute.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {[
+              {
+                icon: FileJson,
+                title: "900 .json workflow files",
+                desc: "Native n8n format. Open n8n → Import from File → done. No conversion, no plugins.",
+                meta: "~14 MB · ZIP archive",
+              },
+              {
+                icon: FolderTree,
+                title: "Sorted into 19 folders",
+                desc: "Organised by category — Sales, AI, E-commerce, DevOps, Marketing, Support and more — so you find what you need in seconds.",
+                meta: "Searchable filenames",
+              },
+              {
+                icon: PlayCircle,
+                title: "Setup video for every workflow",
+                desc: "Short loom-style walkthrough showing the API keys, triggers and one-click test for each automation.",
+                meta: "Streamed · no download needed",
+              },
+            ].map((item, i) => (
+              <div
+                key={item.title}
+                className={`reveal reveal-delay-${i + 1} card-hover rounded-2xl border border-border bg-card p-6`}
+              >
+                <item.icon className="h-8 w-8 text-primary mb-4" />
+                <h3 className="font-bold text-base mb-2">{item.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{item.desc}</p>
+                <p className="text-[11px] font-mono text-[hsl(var(--gold))] uppercase tracking-wider">{item.meta}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 reveal reveal-delay-2 rounded-xl border border-border bg-card/40 p-5 sm:p-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center text-sm">
+              {[
+                { step: "1", label: "Pay $9.99", sub: "Apple Pay · Google Pay · Card · UPI" },
+                { step: "2", label: "Email arrives", sub: "Within 60 seconds, from support@" },
+                { step: "3", label: "Import & run", sub: "First workflow live in 30 seconds" },
+              ].map((s) => (
+                <div key={s.step} className="flex flex-col items-center gap-1">
+                  <span className="h-7 w-7 rounded-full bg-primary/10 border border-primary/30 text-primary text-xs font-black flex items-center justify-center">
+                    {s.step}
+                  </span>
+                  <p className="font-semibold text-foreground">{s.label}</p>
+                  <p className="text-xs text-muted-foreground">{s.sub}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
