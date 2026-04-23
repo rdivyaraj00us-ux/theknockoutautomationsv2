@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { usePageMeta } from "@/hooks/usePageMeta";
@@ -115,6 +116,51 @@ const Starter = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <Helmet>
+        <title>900+ n8n Starter Pack — $9.99 | The Knockout Automations</title>
+        <meta name="description" content="900+ hand-picked n8n workflow templates for $9.99. Instant download, lifetime access, 30-day money-back guarantee." />
+        <link rel="canonical" href="https://theknockoutautomations.com/starter" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://theknockoutautomations.com/starter" />
+        <meta property="og:title" content="900+ n8n Starter Pack — $9.99 | The Knockout Automations" />
+        <meta property="og:description" content="The essential starter collection for n8n builders. 900+ workflows, instant download, lifetime access." />
+        <meta property="og:site_name" content="The Knockout Automations" />
+        <meta property="og:locale" content="en_US" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://theknockoutautomations.com/starter" />
+        <meta name="twitter:title" content="900+ n8n Starter Pack — $9.99" />
+        <meta name="twitter:description" content="900+ hand-picked n8n workflows for $9.99. Instant download, lifetime access." />
+
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "The Knockout Automations — Starter Pack",
+          "description": "900+ hand-picked n8n workflow templates. Instant download, lifetime access.",
+          "brand": { "@type": "Brand", "name": "The Knockout Automations" },
+          "sku": "tkoa_starter_999",
+          "mpn": "TKA-STARTER-900",
+          "category": "Digital Software",
+          "offers": {
+            "@type": "Offer",
+            "url": "https://theknockoutautomations.com/starter",
+            "price": "9.99",
+            "priceCurrency": "USD",
+            "priceValidUntil": "2026-12-31",
+            "availability": "https://schema.org/InStock",
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+              "merchantReturnDays": 30,
+              "returnMethod": "https://schema.org/ReturnByMail",
+              "returnFees": "https://schema.org/FreeReturn"
+            }
+          }
+        })}</script>
+      </Helmet>
+
       <nav className="sticky top-0 z-40 bg-background/95 backdrop-blur-md border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center">
           <Link to="/starter" className="flex items-center gap-2 text-foreground font-bold text-lg">
