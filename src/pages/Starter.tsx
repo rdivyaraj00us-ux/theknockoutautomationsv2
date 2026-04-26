@@ -205,10 +205,6 @@ const Starter = () => {
           </div>
 
           {/* Pre-CTA testimonial — last thing before the buy button */}
-          <div className="reveal reveal-delay-3 mb-5">
-            <PreCtaTestimonial />
-          </div>
-
           <div className="reveal reveal-delay-3 flex flex-col items-center gap-3 mb-6 sm:mb-8">
             <Button
               onClick={buy}
