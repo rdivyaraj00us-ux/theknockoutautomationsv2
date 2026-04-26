@@ -28,7 +28,7 @@ import Footer from "@/components/Footer";
 import LogoMarquee from "@/components/LogoMarquee";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import MicroProofBar from "@/components/MicroProofBar";
-import PreCtaTestimonial from "@/components/PreCtaTestimonial";
+
 
 const WORKFLOW_CARDS = [
   {
