@@ -16,7 +16,7 @@ import {
   Clock,
   Gift,
   Sparkles,
-  Mail,
+  
   Lock,
   FileJson,
   PlayCircle,
@@ -548,32 +548,6 @@ const Starter = () => {
                 See Complete Library →
               </Link>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ HONEST SOCIAL PROOF — first 5 reviewers ═══ */}
-      <section className="py-20 sm:py-24 px-4">
-        <div className="max-w-2xl mx-auto reveal">
-          <div className="rounded-2xl border border-[hsl(var(--gold))]/30 bg-gradient-to-br from-[hsl(var(--gold))]/5 to-transparent p-8 sm:p-10 text-center">
-            <Sparkles className="h-10 w-10 text-[hsl(var(--gold))] mx-auto mb-4" />
-            <p className="text-[hsl(var(--gold))] font-semibold text-xs uppercase tracking-widest mb-3">
-              Founding Reviewer Offer
-            </p>
-            <h2 className="text-2xl sm:text-3xl font-black mb-4">
-              Be one of the first 5 reviewers
-            </h2>
-            <p className="text-sm sm:text-base text-muted-foreground mb-6 leading-relaxed">
-              We launched Starter Pack this week. We won't fake testimonials — we'd rather earn yours. The first 5 buyers who send a written review get a{" "}
-              <span className="text-foreground font-semibold">free upgrade to the Complete Library</span> ($24.99 value) and their quote featured here.
-            </p>
-            <a
-              href="mailto:theknockoutacademy@gmail.com?subject=Starter%20Pack%20Review"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
-            >
-              <Mail className="h-4 w-4" />
-              theknockoutacademy@gmail.com
-            </a>
           </div>
         </div>
       </section>
