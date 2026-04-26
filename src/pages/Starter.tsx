@@ -16,7 +16,7 @@ import {
   Clock,
   Gift,
   Sparkles,
-  Mail,
+  
   Lock,
   FileJson,
   PlayCircle,
