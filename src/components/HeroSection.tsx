@@ -206,7 +206,20 @@ const HeroSection = () => {
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" style={{ opacity: 0.6 }} />
 
       <div className="relative z-10 max-w-5xl mx-auto text-center">
-        <div className="flex items-center justify-center gap-3 sm:gap-5 mb-6 sm:mb-10 flex-wrap">
+        {/* C8: Members pill */}
+        <button
+          type="button"
+          onClick={() => document.querySelector("#big-stat")?.scrollIntoView({ behavior: "smooth" })}
+          className="hero-stagger inline-flex items-center gap-2 text-[11px] sm:text-xs font-mono uppercase tracking-wider text-foreground/80 bg-black/40 backdrop-blur-sm border border-white/10 rounded-full px-4 py-1.5 mb-5 hover:border-white/25 transition-colors"
+        >
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          12,400+ operators using The Vault · ★ 4.96
+        </button>
+
+        <div className="hero-stagger flex items-center justify-center gap-3 sm:gap-5 mb-6 sm:mb-10 flex-wrap">
           {[
             { icon: Download, label: "Instant Digital Delivery" },
             { icon: Clock, label: "Import & Run in 2 Min" },
@@ -257,6 +270,16 @@ const HeroSection = () => {
           <p className="text-[10px] sm:text-xs text-muted-foreground/80 mt-1">
             Secure checkout powered by Dodo Payments · PCI DSS Compliant
           </p>
+          <a
+            href="#pricing"
+            onClick={(e) => {
+              e.preventDefault();
+              document.querySelector("#pricing")?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="text-xs sm:text-sm text-foreground/60 hover:text-foreground underline underline-offset-4 decoration-foreground/40 mt-2 transition-colors"
+          >
+            Just want to test the waters? <span className="font-semibold">Start with the Starter for $9.99 →</span>
+          </a>
         </div>
 
         <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-sm font-semibold text-primary bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 mb-5 sm:mb-8">

@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { trackAndRedirect } from "@/lib/tracking";
+import { trackAndRedirectStarter } from "@/lib/trackingStarter";
 import { ArrowRight, Zap, CheckCircle2, Gift } from "lucide-react";
 import TrustRow from "@/components/TrustRow";
 
@@ -55,6 +56,12 @@ const FinalCTA = () => {
           <p className="text-[10px] sm:text-xs text-muted-foreground/80 mt-2">
             Secure checkout powered by Dodo Payments · PCI DSS Compliant
           </p>
+          <button
+            onClick={() => trackAndRedirectStarter()}
+            className="block mx-auto mt-4 text-xs sm:text-sm text-foreground/60 hover:text-foreground underline underline-offset-4 decoration-foreground/40 transition-colors"
+          >
+            Or test-drive with <span className="font-semibold">The Starter for $9.99 →</span>
+          </button>
           <p className="text-muted-foreground text-xs mt-4 italic">
             100% risk-free. 30-day money-back guarantee, no questions asked.
           </p>
