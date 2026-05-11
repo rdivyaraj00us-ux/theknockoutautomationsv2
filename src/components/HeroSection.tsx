@@ -257,6 +257,16 @@ const HeroSection = () => {
           <p className="text-[10px] sm:text-xs text-muted-foreground/80 mt-1">
             Secure checkout powered by Dodo Payments · PCI DSS Compliant
           </p>
+          <a
+            href="#pricing"
+            onClick={(e) => {
+              e.preventDefault();
+              document.querySelector("#pricing")?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="text-xs sm:text-sm text-foreground/60 hover:text-foreground underline underline-offset-4 decoration-foreground/40 mt-2 transition-colors"
+          >
+            Just want to test the waters? <span className="font-semibold">Start with the Starter for $9.99 →</span>
+          </a>
         </div>
 
         <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-sm font-semibold text-primary bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 mb-5 sm:mb-8">
