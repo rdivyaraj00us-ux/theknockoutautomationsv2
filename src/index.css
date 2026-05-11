@@ -524,3 +524,23 @@
     animation: none !important;
   }
 }
+
+/* ── C8: Hero stagger entrance ── */
+@keyframes hero-stagger-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-stagger {
+  opacity: 0;
+  animation: hero-stagger-in 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+.hero-stagger:nth-of-type(1) { animation-delay: 0ms; }
+.hero-stagger:nth-of-type(2) { animation-delay: 80ms; }
+.hero-stagger:nth-of-type(3) { animation-delay: 160ms; }
+.hero-stagger:nth-of-type(4) { animation-delay: 240ms; }
+.hero-stagger:nth-of-type(5) { animation-delay: 320ms; }
+.hero-stagger:nth-of-type(6) { animation-delay: 400ms; }
+.hero-stagger:nth-of-type(7) { animation-delay: 480ms; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-stagger { animation: none; opacity: 1; }
+}
