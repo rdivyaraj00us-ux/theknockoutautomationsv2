@@ -26,7 +26,6 @@ const MoneyBackSeal = ({ size = 120, className = "" }: MoneyBackSealProps) => {
         viewBox="0 0 200 200"
         width={size}
         height={size}
-        className="mbs-rotate"
         style={{ display: "block" }}
       >
         <defs>
@@ -118,11 +117,6 @@ const MoneyBackSeal = ({ size = 120, className = "" }: MoneyBackSealProps) => {
         </text>
       </svg>
 
-      <style>{`
-        .mbs-rotate { animation: mbs-spin 30s linear infinite; transform-origin: center; }
-        @media (prefers-reduced-motion: reduce) { .mbs-rotate { animation: none; } }
-        @keyframes mbs-spin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
-      `}</style>
     </div>
   );
 };
