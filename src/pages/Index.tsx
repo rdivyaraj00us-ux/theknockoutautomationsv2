@@ -9,12 +9,9 @@ import HeroSection from "@/components/HeroSection";
 import StatCounter from "@/components/StatCounter";
 
 const BigStatShowcase = lazyWithRetry(() => import("@/components/BigStatShowcase"));
-const LearnersTrustStrip = lazyWithRetry(() => import("@/components/LearnersTrustStrip"));
-const InlineCTA = lazyWithRetry(() => import("@/components/InlineCTA"));
 const PricingSection = lazyWithRetry(() => import("@/components/PricingSection"));
 const SolutionSection = lazyWithRetry(() => import("@/components/SolutionSection"));
 const LogoMarquee = lazyWithRetry(() => import("@/components/LogoMarquee"));
-const GuaranteeSection = lazyWithRetry(() => import("@/components/GuaranteeSection"));
 const ProblemSection = lazyWithRetry(() => import("@/components/ProblemSection"));
 const HowItWorks = lazyWithRetry(() => import("@/components/HowItWorks"));
 const MeetYourMentor = lazyWithRetry(() => import("@/components/MeetYourMentor"));
@@ -25,13 +22,11 @@ const WorkflowExplorerPreview = lazyWithRetry(() => import("@/components/Workflo
 const ComparisonTable = lazyWithRetry(() => import("@/components/ComparisonTable"));
 const FAQSection = lazyWithRetry(() => import("@/components/FAQSection"));
 const TestimonialsSection = lazyWithRetry(() => import("@/components/TestimonialsSection"));
-const VideoTestimonialsSection = lazyWithRetry(() => import("@/components/VideoTestimonialsSection"));
 const StillNotSureSection = lazyWithRetry(() => import("@/components/StillNotSureSection"));
 const FinalCTA = lazyWithRetry(() => import("@/components/FinalCTA"));
 const Footer = lazyWithRetry(() => import("@/components/Footer"));
 const MobileStickyBar = lazyWithRetry(() => import("@/components/MobileStickyBar"));
 const ExitIntentPopup = lazyWithRetry(() => import("@/components/ExitIntentPopup"));
-const PurchaseToast = lazyWithRetry(() => import("@/components/PurchaseToast"));
 
 const LazyFallback = () => <div className="min-h-[200px]" />;
 
@@ -60,27 +55,13 @@ const Index = () => {
 
       <HeroSection />
 
-      {/* C4: Big Stat showcase directly after hero */}
       <Suspense fallback={<LazyFallback />}>
         <section id="big-stat">
           <BigStatShowcase />
         </section>
       </Suspense>
 
-      {/* C5: Learners trust strip */}
-      <Suspense fallback={<LazyFallback />}>
-        <LearnersTrustStrip />
-      </Suspense>
-
       <StatCounter />
-
-      <Suspense fallback={null}>
-        <InlineCTA />
-      </Suspense>
-
-      <Suspense fallback={<LazyFallback />}>
-        <PricingSection />
-      </Suspense>
 
       <Suspense fallback={<LazyFallback />}>
         <SolutionSection />
@@ -91,17 +72,13 @@ const Index = () => {
       </Suspense>
 
       <Suspense fallback={<LazyFallback />}>
-        <GuaranteeSection />
-      </Suspense>
-
-      <Suspense fallback={<LazyFallback />}>
         <ProblemSection />
       </Suspense>
+
       <Suspense fallback={<LazyFallback />}>
         <HowItWorks />
       </Suspense>
 
-      {/* C3: Meet your Mentor between How It Works and What You Can Build */}
       <Suspense fallback={<LazyFallback />}>
         <MeetYourMentor />
       </Suspense>
@@ -120,18 +97,17 @@ const Index = () => {
       </div>
 
       <Suspense fallback={<LazyFallback />}>
+        <PricingSection />
+      </Suspense>
+
+      <Suspense fallback={<LazyFallback />}>
         <FAQSection />
       </Suspense>
+
       <Suspense fallback={<LazyFallback />}>
         <TestimonialsSection />
       </Suspense>
 
-      {/* C7: Video testimonials placeholder */}
-      <Suspense fallback={<LazyFallback />}>
-        <VideoTestimonialsSection />
-      </Suspense>
-
-      {/* C6: Still Not Sure between FAQ/testimonials and Final CTA */}
       <Suspense fallback={<LazyFallback />}>
         <StillNotSureSection />
       </Suspense>
@@ -139,6 +115,7 @@ const Index = () => {
       <Suspense fallback={<LazyFallback />}>
         <FinalCTA />
       </Suspense>
+
       <Suspense fallback={<LazyFallback />}>
         <Footer />
       </Suspense>
@@ -146,7 +123,6 @@ const Index = () => {
       <Suspense fallback={null}>
         <MobileStickyBar />
         <ExitIntentPopup />
-        <PurchaseToast />
       </Suspense>
     </div>
   );
